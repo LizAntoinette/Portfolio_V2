@@ -48,6 +48,12 @@ body {
   -webkit-text-fill-color: transparent;
 }
 
+.text-contact{
+  background: linear-gradient(135deg, #ebbcba 0%, #eb6f92 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 .company-color{
   background: linear-gradient(135deg, #F6C177 0%, #EA9D34 100%);
   -webkit-background-clip: text;
@@ -63,6 +69,9 @@ body {
   line-height: 0;
 }
 
+.bg-input{
+  background-color: rgba(35, 33, 54, 0.85);
+}
 /* .exp-tab:hover {
   background-image: linear-gradient(166deg, rgba(39,37,51,1) 0%, rgba(59,56,71,1) 36%, rgba(83,70,69,1) 63%, rgba(109,85,66,1) 86%, rgba(149,108,62,1) 100%, rgba(234,157,52,1) 100%);
 } */

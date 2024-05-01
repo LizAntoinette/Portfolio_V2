@@ -5,6 +5,8 @@ import Header from "@/components/header";
 import Home from "@/components/home";
 import Experience from "@/components/experience"
 import Project from "@/components/project"
+import Contact from "@/components/contact"
+import Footer from "@/components/footer";
 import { useEffect, useMemo, useState } from "react";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import {
@@ -47,6 +49,8 @@ export default function Main() {
       <Home></Home>
       <Experience></Experience>
       <Project></Project>
+      <Contact></Contact>
+      <Footer></Footer>
   
       <Particles
         id="tsparticles"
