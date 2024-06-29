@@ -27,8 +27,8 @@ function randomNormal(o: any): number {
 }
 
 const NUM_PARTICLES = 600;
-const PARTICLE_SIZE = 0.45; // View heights
-const SPEED = 25000; // Milliseconds
+const PARTICLE_SIZE = 0.25; // View heights
+const SPEED = 20000; // Milliseconds
 
 interface Particle {
   x: number;
@@ -50,8 +50,8 @@ function rand(low: number, high: number): number {
 
 function createParticle(canvas: HTMLCanvasElement): Particle {
   const colour = {
-    r: 215,
-    g: randomNormal({ mean: 125, dev: 20 }),
+    r: 200,
+    g: randomNormal({ mean: 115, dev: 20 }),
     b: 50,
     a: rand(0, 1),
   };
@@ -62,7 +62,7 @@ function createParticle(canvas: HTMLCanvasElement): Particle {
     duration: randomNormal({ mean: SPEED, dev: SPEED * 0.1 }),
     amplitude: randomNormal({ mean: 16, dev: 2 }),
     offsetY: randomNormal({ mean: 0, dev: 10 }),
-    arc: Math.PI * 2,
+    arc: Math.PI * 1.6,
     startTime: performance.now() - rand(0, SPEED),
     colour: `rgba(${colour.r}, ${colour.g}, ${colour.b}, ${colour.a})`,
   };
@@ -73,18 +73,26 @@ function moveParticle(particle: Particle, canvas: HTMLCanvasElement, time: numbe
   return {
     ...particle,
     x: progress,
-    y: ((Math.sin(progress * particle.arc) * particle.amplitude) + particle.offsetY),
+    y: ((Math.sin(progress * particle.arc) * particle.amplitude) + particle.offsetY/1.3),
   };
 }
+function smoothstep(edge0: number, edge1: number, x: number): number {
+    // Scale, bias and saturate x to 0..1 range
+    x = Math.max(0, Math.min(1, (x - edge0) / (edge1 - edge0)));
+    // Evaluate polynomial
+    return x * x * (3 - 2 * x);
+  }
 
 function drawParticle(particle: Particle, canvas: HTMLCanvasElement, ctx: CanvasRenderingContext2D): void {
   const vh = canvas.height / 100;
+  const transitionProgress = smoothstep(0, 1, particle.x); // Smooth transition progress from 0 to 1
+  const y = transitionProgress * particle.y + (1 - transitionProgress) * (particle.y / 2); // Interpolated y value
 
   ctx.fillStyle = particle.colour;
   ctx.beginPath();
   ctx.ellipse(
     particle.x * canvas.width,
-    particle.y * vh + (canvas.height / 2),
+    y * vh + (canvas.height/1.4),
     particle.diameter * vh,
     particle.diameter * vh,
     0,

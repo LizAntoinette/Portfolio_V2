@@ -1,20 +1,20 @@
+import React from 'react';
 import Image from "next/image";
-
 
 export default function Project() {
     return (
-        <section id="project" className="mt-15 flex-grow flex h-[125rem] z-20">
+        <section id="project" className="mt-15 flex-grow flex h-[120rem] z-20">
             <div className="flex mx-auto w-3/4 flex-col mt-32">
-                <div className='mb-7'>
-                    <p className="text-[30px] mb-6 font-semibold w-full border-b-[1px] border-white line-sub my-10 ">
+                <div className='mb-7'  data-aos="fade-up">
+                    <p className="text-[30px] mb-6 font-semibold w-full border-b-[1px] border-[#797593ba] line-sub my-10 ">
                         
-                        <span className='bg-[#191724] pr-3'>
+                        <span className='bg-[#0C0C0DFF] pr-3'>
                             My <span className='title-name'>Personal Projects</span>
                         </span>
                     </p>
                 </div>
             
-                <div  className="flex flex-col md:flex-row gap-10 my-10">
+                <div  data-aos="fade-left"  className="flex flex-col md:flex-row gap-10 my-10">
         
                     <div className="mt-10 flex-col ">
                         <Image src="/images/img_web.png" className="max-w-[650px]" alt="Halcyon Theme" width={650} height={650}/>
@@ -48,7 +48,7 @@ export default function Project() {
                     
                 
                 </div>
-                <div  className="flex flex-col md:flex-row gap-10 my-[6rem]">
+                <div  data-aos="fade-right"  className="flex flex-col md:flex-row gap-10 my-[6rem]">
                     <div className=" flex flex-col py-12 text-white justify-start">
                         <h1 className="text-3xl font-bold mb-2">Simple E-Commerce Platform</h1>
                         <p className="text-lg pb-6 company-color">ASP.NET CORE + Angular</p>
@@ -69,8 +69,8 @@ export default function Project() {
                     </div>
 
                 
-                </div>
-                <div  className="flex flex-col md:flex-row gap-10 my-10">
+                </div> 
+                <div  data-aos="fade-left"  className="flex flex-col md:flex-row gap-10 my-10">
     
                     <div className="mt-10 flex-col ">
                         <Image src="/images/img_web.png" className="max-w-[650px]" alt="Halcyon Theme" width={650} height={650}/>

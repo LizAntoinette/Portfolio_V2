@@ -23,24 +23,26 @@ export default function Contact() {
     // Update handleSubmit to include type information for the event
     const handleSubmit = (e: FormEvent) => {
         e.preventDefault();
-        console.log(formData);  // Process form data here or send to an API
+    
+        const recipient = 'lizanguren12@gmail.com';
+        const subject = encodeURIComponent((document.getElementById('subject') as HTMLInputElement).value);
+        const body = encodeURIComponent(formData.message);
+        
+        // Open default email client with pre-filled fields
+        window.location.href = `mailto:${recipient}?subject=${subject}&body=${body}`;
     };
 
         
         return (
         
-        <section id="contact" className="mt-15 flex-grow mx-auto flex h-[60rem] z-20">
-            <div className=" my-[10rem]  mx-auto min-w-[33rem] justify-items-center">
+        <section id="contact" className="mt-15 flex-grow mx-auto flex h-[53rem] z-20">
+            <div data-aos="fade-up"  className=" my-[10rem]  mx-auto min-w-[33rem] justify-items-center">
                
                     <h2 className="text-3xl font-bold mb-5 text-center text-contact">Get In Touch</h2>
-                    <p className="text-lg text-center mb-10">Have a question or want to work together?</p>
+                    <p  className="text-lg text-center mb-10">Have a question or want to work together?</p>
 
                     <form onSubmit={handleSubmit} className="flex text-sm flex-col justify-items-center">
-                        {/* Email Field */}
-                        <div className="mb-6">
-                            <label htmlFor="email" className="block mb-2  font-semibold">Email</label>
-                            <input type="email" autoComplete="new-password" id="email" name="email" onChange={handleChange} value={formData.email} className="bg-input text-white block w-full p-3 rounded-2xl" placeholder="John@example.com" />
-                        </div>
+                
                         {/* Subject Field */}
                         <div className="mb-6">
                             <label htmlFor="subject" className="block mb-2  font-semibold">Subject</label>
