@@ -52,11 +52,11 @@ export default function Main() {
       <Contact></Contact>
       <Footer></Footer>
   
-      <Particles
+      {/* <Particles
         id="tsparticles"
         particlesLoaded={particlesLoaded}
         options={optionsParticles}
-      />
+      /> */}
     
    
   </main>

@@ -52,7 +52,7 @@ export default function Contact() {
                             <textarea id="message" name="message" onChange={handleChange} value={formData.message} rows="10" className="bg-input text-white block w-full p-3 rounded-2xl" placeholder="Write your thoughts here..." />
                         </div>
                         {/* Submit Button */}
-                        <button type="submit" className="border-[#d7827e] border hover:bg-[#ebbcba] hover:text-[#191724] text-[#ebbcba] font-bold py-2 px-4 rounded w-[15rem] mx-auto rounded-xl">Send Message</button>
+                        <button type="submit" className="border-[#d7827e] border mt-4 hover:bg-[#ebbcba] hover:text-[#191724] text-[#ebbcba] font-bold py-2 px-4 rounded w-[15rem] mx-auto rounded-xl">Send Message</button>
                     </form>
                 
             </div>

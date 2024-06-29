@@ -7,6 +7,7 @@ export default function Project() {
             <div className="flex mx-auto w-3/4 flex-col mt-32">
                 <div className='mb-7'>
                     <p className="text-[30px] mb-6 font-semibold w-full border-b-[1px] border-white line-sub my-10 ">
+                        
                         <span className='bg-[#191724] pr-3'>
                             My <span className='title-name'>Personal Projects</span>
                         </span>
@@ -23,7 +24,7 @@ export default function Project() {
                         <h1 className="text-3xl font-bold mb-2">Budget Tracker</h1>
                         <p className="text-lg pb-6 company-color">Spring boot + ReactJS</p>
                         <div className="max-w-[700px] -ml-[330px] bg-[#272533] px-6 py-5 mb-6 rounded-2xl" >
-                            <p className="text-sm leading-7">A simple budget tracker that manages  your finance using  Java Spring Boot 
+                            <p className="text-sm leading-7 text-[#908caa]">A simple budget tracker that manages  your finance using  Java Spring Boot 
                             framework, Typescript, Tailwindcss and React.js</p>  
                         </div>
                         
@@ -52,7 +53,7 @@ export default function Project() {
                         <h1 className="text-3xl font-bold mb-2">Simple E-Commerce Platform</h1>
                         <p className="text-lg pb-6 company-color">ASP.NET CORE + Angular</p>
                         <div className="max-w-[700px] -mr-[330px] bg-[#272533] px-6 py-5 mb-6 rounded-2xl z-30" >
-                            <p className="text-sm leading-7">A simple budget tracker that manages  your  finance using  C# ASP.NET Core, Typescript, Bootstrap, SASS and AngularJS</p>  
+                            <p className="text-sm leading-7 text-[#908caa]">A simple budget tracker that manages  your  finance using  C# ASP.NET Core, Typescript, Bootstrap, SASS and AngularJS</p>  
                         </div>
                         
                         <div className="flex space-x-4  justify-start">
@@ -79,7 +80,7 @@ export default function Project() {
                         <h1 className="text-3xl font-bold mb-2">Blog Website</h1>
                         <p className="text-lg pb-6 company-color">Django + NextJS</p>
                         <div className="max-w-[700px] -ml-[330px] bg-[#272533] px-6 py-5 mb-6 rounded-2xl" >
-                            <p className="text-sm leading-7"> A simple budget tracker that manages  yourfinance using  Java Spring Boot framework, Typescript, Tailwindcss and React.js </p>  
+                            <p className="text-sm leading-7 text-[#908caa]"> A simple budget tracker that manages  yourfinance using  Java Spring Boot framework, Typescript, Tailwindcss and React.js </p>  
                         </div>
                         
                     <div className="flex space-x-4  justify-end">

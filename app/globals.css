@@ -43,9 +43,14 @@ body {
 }
 
 .text-name{
-  background: linear-gradient(135deg, #eb6f92 0%, #ebbcba 100%);
+  background: linear-gradient(34deg, #eb6f92 0%, #ebbcba 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  
+}
+
+#particle-canvas{
+  z-index: -999 !important;
 }
 
 .text-contact{
@@ -67,6 +72,10 @@ body {
 }
 .line-sub{
   line-height: 0;
+}
+
+.text-courier {
+  font-family: 'Courier New', Courier, monospace;
 }
 
 .bg-input{
