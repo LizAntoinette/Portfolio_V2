@@ -14,16 +14,17 @@ export default function Project() {
                     </p>
                 </div>
             
-                <div  data-aos="fade-left"  className="flex flex-col md:flex-row gap-10 my-10">
+                <div  data-aos="fade-left"  className="flex flex-col md:flex-row gap-10 my-10 pl-2.5">
         
-                    <div className="mt-10 flex-col ">
-                        <Image src="/images/img_web.png" className="max-w-[650px]" alt="Halcyon Theme" width={650} height={650}/>
+                    <div className="relative mt-10 flex-col -z-10">
+                        <Image src="/images/budget-tracker2.png" className="max-w-[650px]" alt="Halcyon Theme" width={650} height={650}/>
+                        <div className="absolute inset-0 max-w-[650px] bg-gradient-to-t from-[#EA9D34] hover:opacity-0 to-transparent opacity-70 div-gradient-left fade-down-hover"></div>
                     </div>
 
                     <div className=" flex flex-col py-12 text-white text-right justify-end">
                         <h1 className="text-3xl font-bold mb-2">Budget Tracker</h1>
                         <p className="text-lg pb-6 company-color">Spring boot + ReactJS</p>
-                        <div className="max-w-[700px] -ml-[330px] bg-[#272533] px-6 py-5 mb-6 rounded-2xl" >
+                        <div className="max-w-[650px] -ml-[280px] bg-[#272533] px-6 py-5 mb-6 rounded-2xl" >
                             <p className="text-sm leading-7 text-[#908caa]">A simple budget tracker that manages  your finance using  Java Spring Boot 
                             framework, Typescript, Tailwindcss and React.js</p>  
                         </div>
@@ -48,11 +49,11 @@ export default function Project() {
                     
                 
                 </div>
-                <div  data-aos="fade-right"  className="flex flex-col md:flex-row gap-10 my-[6rem]">
+                <div  data-aos="fade-right"  className="flex flex-col md:flex-row gap-10 my-[6rem] pl-2.5">
                     <div className=" flex flex-col py-12 text-white justify-start">
                         <h1 className="text-3xl font-bold mb-2">Simple E-Commerce Platform</h1>
                         <p className="text-lg pb-6 company-color">ASP.NET CORE + Angular</p>
-                        <div className="max-w-[700px] -mr-[330px] bg-[#272533] px-6 py-5 mb-6 rounded-2xl z-30" >
+                        <div className="max-w-[650px] -mr-[280px] bg-[#272533] px-6 py-5 mb-6 rounded-2xl z-30" >
                             <p className="text-sm leading-7 text-[#908caa]">A simple budget tracker that manages  your  finance using  C# ASP.NET Core, Typescript, Bootstrap, SASS and AngularJS</p>  
                         </div>
                         
@@ -64,26 +65,28 @@ export default function Project() {
                             <p className="text-white px-1 text-xs py-2">Tailwinds</p>
                         </div>
                     </div>
-                    <div className="flex-col ">
-                        <Image src="/images/img_web.png" className="max-w-[650px]" alt="Halcyon Theme" width={650} height={650}/>
+                    <div className="relative flex-col -z-10">
+                        <Image src="/images/img_web.png" className="max-w-[650px]" alt="Halcyon Theme" width={650} height={650} />
+                        <div className="absolute inset-0 max-w-[650px] bg-gradient-to-t from-[#EA9D34] hover:opacity-0 to-transparent opacity-70 div-gradient-right fade-down-hover"></div>
                     </div>
 
                 
                 </div> 
-                <div  data-aos="fade-left"  className="flex flex-col md:flex-row gap-10 my-10">
+                <div  data-aos="fade-left"  className="flex flex-col md:flex-row gap-10 my-10 pl-2.5">
     
-                    <div className="mt-10 flex-col ">
+                    <div className="relative mt-10 flex-col -z-10">
                         <Image src="/images/img_web.png" className="max-w-[650px]" alt="Halcyon Theme" width={650} height={650}/>
+                        <div className="absolute inset-0 max-w-[650px] bg-gradient-to-t from-[#EA9D34] to-transparent  opacity-70 div-gradient-left fade-down-hover"></div>
                     </div>
 
                     <div className=" flex flex-col py-12 text-white text-right justify-end mb-10">
                         <h1 className="text-3xl font-bold mb-2">Blog Website</h1>
                         <p className="text-lg pb-6 company-color">Django + NextJS</p>
-                        <div className="max-w-[700px] -ml-[330px] bg-[#272533] px-6 py-5 mb-6 rounded-2xl" >
-                            <p className="text-sm leading-7 text-[#908caa]"> A simple budget tracker that manages  yourfinance using  Java Spring Boot framework, Typescript, Tailwindcss and React.js </p>  
+                        <div className="max-w-[650px] -ml-[280px] bg-[#272533] px-6 py-5 mb-6 rounded-2xl" >
+                            <p className="text-sm leading-7 text-[#908caa]"> A simple budget tracker that manages your finance using  Java Spring Boot framework, Typescript, Tailwindcss and React.js </p>  
                         </div>
                         
-                    <div className="flex space-x-4  justify-end">
+                        <div className="flex space-x-4  justify-end">
                             <p className="text-white px-1 text-xs py-2">Html</p>
                             <p className="text-white px-1 text-xs py-2">Java</p>
                             <p className="text-white px-1 text-xs py-2">ReactJS</p>

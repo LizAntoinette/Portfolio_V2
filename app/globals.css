@@ -64,6 +64,7 @@ main{
   background-position: 0px 0px;
   background-image: linear-gradient(-3deg, #100F14 8%, #191724 75%);
 }
+
 #project{
   background-size: 100% 100%;
   background-position: 0px 0px;
@@ -109,6 +110,35 @@ main{
 .bg-input{
   background-color: rgba(35, 33, 54, 0.85);
 }
+
+/* on project page */
+@keyframes fadeDown {
+  from {
+      opacity: 0.7;
+      transform: translateY(0);
+  }
+  to {
+      opacity: 0;
+      transform: translateY(0px);
+  }
+}
+
+.div-gradient-left{
+  background: linear-gradient(20deg, #EA9D34, transparent);
+}
+
+.div-gradient-right{
+  height: 396px;
+  background: linear-gradient(-20deg, #EA9D34, transparent);
+}
+
+.fade-down-hover:hover {
+  animation: fadeDown 1s forwards;
+}
+
+
+
+
 /* .exp-tab:hover {
   background-image: linear-gradient(166deg, rgba(39,37,51,1) 0%, rgba(59,56,71,1) 36%, rgba(83,70,69,1) 63%, rgba(109,85,66,1) 86%, rgba(149,108,62,1) 100%, rgba(234,157,52,1) 100%);
 } */
