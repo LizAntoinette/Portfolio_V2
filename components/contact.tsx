@@ -51,7 +51,7 @@ export default function Contact() {
                         {/* Message Field */}
                         <div className="mb-6">
                             <label htmlFor="message" className="block mb-2  font-semibold">Your Message</label>
-                            <textarea id="message" name="message" onChange={handleChange} value={formData.message} rows={3} className="bg-input text-white block w-full p-3 rounded-2xl" placeholder="Write your thoughts here..." />
+                            <textarea id="message" name="message" onChange={handleChange} value={formData.message} rows={10} className="bg-input text-white block w-full p-3 rounded-2xl" placeholder="Write your thoughts here..." />
                         </div>
                         {/* Submit Button */}
                         <button type="submit" className="border-[#d7827e] border mt-4 hover:bg-[#ebbcba] hover:text-[#191724] text-[#ebbcba] font-bold py-2 px-4 rounded w-[15rem] mx-auto rounded-xl">Send Message</button>
