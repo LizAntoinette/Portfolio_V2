@@ -24,19 +24,19 @@ export default function Project() {
                     <div className=" flex flex-col py-12 text-white text-right justify-end">
                         <h1 className="text-3xl font-bold mb-2">Budget Tracker</h1>
                         <p className="text-lg pb-6 company-color">Spring boot + ReactJS</p>
-                        <div className="max-w-[650px] -ml-[280px] bg-[#272533] px-6 py-5 mb-6 rounded-2xl" >
-                            <p className="text-sm leading-7 text-[#908caa]">A simple budget tracker that manages  your finance using  Java Spring Boot 
-                            framework, Typescript, Tailwindcss and React.js</p>  
+                        <div className="max-w-[540px] -ml-[112px] bg-[#272533] px-6 py-5 mb-6 rounded-2xl" >
+                            <p className="text-sm leading-7 text-[#908caa]">A budget tracking app with a user-friendly dashboard and graphs. 
+                                Users can easily manage their finances with features that let them create, read, update, and delete budget entries.</p>  
                         </div>
                         
                         <div className="flex space-x-4  justify-end">
-                            <p className="text-white px-1 text-xs py-2">Html</p>
                             <p className="text-white px-1 text-xs py-2">Java</p>
                             <p className="text-white px-1 text-xs py-2">ReactJS</p>
-                            <p className="text-white px-1 text-xs py-2">Javacript</p>
-                            <p className="text-white px-1 text-xs py-2">Tailwinds</p>
+                            <p className="text-white px-1 text-xs py-2">Typescript</p>
+                            <p className="text-white px-1 text-xs py-2">TailwindCSS</p>
+                            <p className="text-white px-1 text-xs py-2">MongoDB</p>
                         </div>
-                        <div className=" flex m-3 justify-end">
+                        {/* <div className=" flex m-3 justify-end">
                             <a href="https://github.com/LizAntoinette" className="text-gray-400 hover:text-gray-300 mx-2">
                              
                                 <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -44,29 +44,30 @@ export default function Project() {
                                 </svg>
                             </a>
 
-                        </div>
+                        </div> */}
                     </div>
                     
                 
                 </div>
                 <div  data-aos="fade-right"  className="flex flex-col md:flex-row gap-10 my-[6rem] pl-2.5">
                     <div className=" flex flex-col py-12 text-white justify-start">
-                        <h1 className="text-3xl font-bold mb-2">Simple E-Commerce Platform</h1>
-                        <p className="text-lg pb-6 company-color">ASP.NET CORE + Angular</p>
-                        <div className="max-w-[650px] -mr-[280px] bg-[#272533] px-6 py-5 mb-6 rounded-2xl z-30" >
-                            <p className="text-sm leading-7 text-[#908caa]">A simple budget tracker that manages  your  finance using  C# ASP.NET Core, Typescript, Bootstrap, SASS and AngularJS</p>  
+                        <h1 className="text-3xl font-bold mb-2">Simple Task Scheduler</h1>
+                        <p className="text-lg pb-6 company-color">Django + Angular</p>
+                        <div className="max-w-[540px] -mr-[112px] bg-[#272533] px-6 py-5 mb-6 rounded-2xl z-30" >
+                            <p className="text-sm leading-7 text-[#908caa]">A simple task scheduling website. Users can create, read, update, and delete tasks, making it easy to stay organized and manage their time.</p>  
                         </div>
                         
                         <div className="flex space-x-4  justify-start">
-                            <p className="text-white px-1 text-xs py-2">Html</p>
-                            <p className="text-white px-1 text-xs py-2">Java</p>
-                            <p className="text-white px-1 text-xs py-2">ReactJS</p>
-                            <p className="text-white px-1 text-xs py-2">Javacript</p>
-                            <p className="text-white px-1 text-xs py-2">Tailwinds</p>
+                            <p className="text-white px-1 text-xs py-2">Python</p>
+                            <p className="text-white px-1 text-xs py-2">AnguralJS</p>
+                            <p className="text-white px-1 text-xs py-2">GraphQL</p>
+                            <p className="text-white px-1 text-xs py-2">SASS</p>
+                            <p className="text-white px-1 text-xs py-2">TailwindCSS</p>
+                            <p className="text-white px-1 text-xs py-2">MongoDB</p>
                         </div>
                     </div>
                     <div className="relative flex-col -z-10">
-                        <Image src="/images/img_web.png" className="max-w-[650px]" alt="Halcyon Theme" width={650} height={650} />
+                        <Image src="/images/task4.png" className="max-w-[650px]" alt="Halcyon Theme" width={650} height={650} />
                         <div className="absolute inset-0 max-w-[650px] bg-gradient-to-t from-[#EA9D34] hover:opacity-0 to-transparent opacity-70 div-gradient-right fade-down-hover"></div>
                     </div>
 
@@ -75,23 +76,23 @@ export default function Project() {
                 <div  data-aos="fade-left"  className="flex flex-col md:flex-row gap-10 my-10 pl-2.5">
     
                     <div className="relative mt-10 flex-col -z-10">
-                        <Image src="/images/img_web.png" className="max-w-[650px]" alt="Halcyon Theme" width={650} height={650}/>
+                        <Image src="/images/trans.png" className="max-w-[650px]" alt="Halcyon Theme" width={650} height={650}/>
                         <div className="absolute inset-0 max-w-[650px] bg-gradient-to-t from-[#EA9D34] to-transparent  opacity-70 div-gradient-left fade-down-hover"></div>
                     </div>
 
                     <div className=" flex flex-col py-12 text-white text-right justify-end mb-10">
-                        <h1 className="text-3xl font-bold mb-2">Blog Website</h1>
-                        <p className="text-lg pb-6 company-color">Django + NextJS</p>
-                        <div className="max-w-[650px] -ml-[280px] bg-[#272533] px-6 py-5 mb-6 rounded-2xl" >
-                            <p className="text-sm leading-7 text-[#908caa]"> A simple budget tracker that manages your finance using  Java Spring Boot framework, Typescript, Tailwindcss and React.js </p>  
+                        <h1 className="text-3xl font-bold mb-2">Translator & Learning tool with AI</h1>
+                        <p className="text-lg pb-6 company-color">ExpressJS + Vuejs</p>
+                        <div className="max-w-[540px] -ml-[112px] bg-[#272533] px-6 py-5 mb-6 rounded-2xl" >
+                            <p className="text-sm leading-7 text-[#908caa]"> A language learning app that translates text, offers exercises, and allows users to chat with an AI. This makes learning new languages interactive and fun. </p>  
                         </div>
                         
                         <div className="flex space-x-4  justify-end">
-                            <p className="text-white px-1 text-xs py-2">Html</p>
-                            <p className="text-white px-1 text-xs py-2">Java</p>
-                            <p className="text-white px-1 text-xs py-2">ReactJS</p>
+                            <p className="text-white px-1 text-xs py-2">NodeJs</p>
+                            <p className="text-white px-1 text-xs py-2">Vuejs</p>
                             <p className="text-white px-1 text-xs py-2">Javacript</p>
-                            <p className="text-white px-1 text-xs py-2">Tailwinds</p>
+                            <p className="text-white px-1 text-xs py-2">Tailwind CSS</p>
+                            <p className="text-white px-1 text-xs py-2">Firbase</p>
                         </div>
                     </div>
                 

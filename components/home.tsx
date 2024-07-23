@@ -7,7 +7,7 @@ export default function Home() {
     return (
         <section id="home" className="mt-15 flex-grow flex items-center h-screen  z-20">
          
-            <div className="ml-52 -mt-[75px] w-1/2">
+            <div className="ml-52 -mt-[75px] xl:w-1/2">
                 <h1 data-aos="fade-up" data-aos-delay="600" className="text-xl mb-3 font-medium text-name ">Hi, my name is</h1>
                 <h2 data-aos="fade-up" data-aos-delay="700"className="text-[53px] font-bold">Liz Antoinette Anguren</h2>
                 <p data-aos="fade-up" data-aos-delay="800" className="text-[48px] -mt-2 mb-6 text-zinc-400 font-bold">Full Stack Developer</p>

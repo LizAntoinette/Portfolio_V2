@@ -23,7 +23,7 @@ export default function Main() {
       }, [])
 
   return (
-    <main className="flex flex-col min-h-screen">
+    <main className="flex flex-col min-h-screen w-full">
       
       <Header></Header>
       <Home></Home>

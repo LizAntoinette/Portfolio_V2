@@ -31,7 +31,7 @@ export default function Header() {
 
 
   return (
-    <header id="header" className="fixed top-0 left-0 w-full z-50">
+    <header id="header" className="fixed top-0 left-0 w-full z-50 header-glass">
       <a className="absolute top-0 left-5 h-full" id="logo" href="#">
         <img src="assets/logo2.png" className="h-full" alt="" />
       </a>
