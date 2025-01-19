@@ -21,9 +21,7 @@ export default function Footer() {
 
        
         <p className="text-gray-500 text-center mt-10 text-sm">
-            Design Inspired from Brittany Chiang & Theme Color from Rose Pine
-        <br/>
-                © 2024 - Liz Antoinette Anguren
+                © 2025 - Liz Antoinette Anguren
         </p>
        
     </div>

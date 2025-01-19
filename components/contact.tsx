@@ -41,7 +41,7 @@ export default function Contact() {
                     <h2 className="text-3xl font-bold mb-5 text-center text-contact">Get In Touch</h2>
                     <p  className="text-lg text-center mb-10">Have a question or want to work together?</p>
 
-                    <form onSubmit={handleSubmit} className="flex text-sm flex-col justify-items-center">
+                    <form onSubmit={handleSubmit} className="flex text-sm  min-w-[26rem] flex-col justify-items-center">
                 
                         {/* Subject Field */}
                         <div className="mb-6">

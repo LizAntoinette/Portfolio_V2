@@ -7,7 +7,6 @@ export default function Experience() {
     const [activeTab, setActiveTab] = useState<string>('Coach Catalyst'); // Specify type as string
 
     useEffect(() => {
-        
         AOS.refresh();
     }, [activeTab]);
     
@@ -72,7 +71,7 @@ export default function Experience() {
                             <p className='font-bold text-xl'>Full Stack Developer<span className='company-color'> @ Coach Catalyst</span></p>
                             <p className='mt-2 mb-6 text-sm font-semibold '>Jan 2023 - Present</p>
                             
-                            <ul className='list-disc pl-4 space-y-4 text-justify text-sm text-[#e0def4] leading-relaxed'>
+                            <ul className='list-disc pl-4 space-y-4 text-justify text-sm text-gray-300 leading-relaxed'>
                                 <li>Developed additional features for Coach Catalyst Website using Ruby on Rails.</li>
                                 <li>Proficient in Ruby programming language, adept at Object-Oriented Programming (OOP) concepts.</li>
                                 <li>Applied Tailwind CSS and Vue.js for improved user interfaces, alongside PostgreSQL for database management, and contributed to understanding of RESTful web services and APIs in modern web development.</li>
@@ -90,7 +89,7 @@ export default function Experience() {
                             <p className='font-bold text-xl text-[#ffffff]'>Software Engineer<span className='company-color'> @ Senarysoft LLC</span></p>
                             <p className='mt-2 mb-6 text-sm font-semibold'>Feb 2022 - June 2023</p>
                             
-                            <ul className='list-disc pl-4 space-y-4 text-justify text-sm  text-[#e0def4]'>
+                            <ul className='list-disc pl-4 space-y-4 text-justify text-sm  text-gray-300'>
                                 <li>Collaborated in a developer team, delivering two projects: an ASP.NET C# website and a hybrid mobile web application.</li>
                                 <li>Engineered accessible, responsive user interfaces for consistent user experience across device</li>
                                 <li>Identified and resolved bugs, enhancing web functionality and speed. Conducted code reviews to improve overall code quality and team collaboration. Implemented security best practices for robustness and integrity against vulnerabilities.</li>
@@ -108,7 +107,7 @@ export default function Experience() {
                             <p className='mt-2 mb-6 text-sm font-semibold'>Aug 2019 – Dec 2021</p>
                             
                             
-                            <ul className='list-disc pl-4 space-y-4 text-justify text-sm  text-[#e0def4]'>
+                            <ul className='list-disc pl-4 space-y-4 text-justify text-sm  text-gray-300'>
                                 <li>Designed and executed curriculum for CS and IT students, incorporating current technology.</li>
                                 <li>Managed student records and academic performance metrics</li>
                                 <li>Developed and implemented instructional plans aligned with course objectives, alongside creating website projects for school use.</li>
@@ -125,7 +124,7 @@ export default function Experience() {
                             <p className='font-bold text-xl text-[#ffffff]'>Junior Web Developer<span className='company-color'> @ WinterWind</span></p>
                             <p className='mt-2 mb-6 text-sm font-semibold'>May 2018 – Dec 2018</p>
                             
-                            <ul className='list-disc pl-4 space-y-4 text-justify text-sm  text-[#e0def4]'>
+                            <ul className='list-disc pl-4 space-y-4 text-justify text-sm  text-gray-300'>
                                 <li>Contributed to building Coinflyer.com, a cryptocurrency trading site, focusing on website interfaces with HTML and CSS.</li>
                                 <li>Utilized PHP, MySQL, and JavaScript for programming requirements, conducted testing and troubleshooting pre-deployment.</li>
                                 <li>Managed translation team, assisted developers during understaffed periods, and conducted research on new technologies for website projects.</li>
