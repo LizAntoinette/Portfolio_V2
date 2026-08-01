@@ -7,6 +7,7 @@ import 'aos/dist/aos.css';
 import Header from "@/components/header";
 import Home from "@/components/home";
 import Experience from "@/components/experience"
+import Masters from "@/components/masters";
 import Project from "@/components/project"
 import Contact from "@/components/contact"
 import Footer from "@/components/footer";
@@ -28,6 +29,7 @@ export default function Main() {
       <Header></Header>
       <Home></Home>
       <Experience></Experience>
+      <Masters></Masters>
       <Project></Project>
       <Contact></Contact>
       <Footer></Footer>

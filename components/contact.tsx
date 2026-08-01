@@ -35,23 +35,23 @@ export default function Contact() {
         
         return (
         
-        <section id="contact" className="mt-15 flex-grow mx-auto flex h-[53rem] z-20">
-            <div data-aos="fade-up"  className=" my-[10rem]  mx-auto min-w-[33rem] justify-items-center">
+        <section id="contact" className="mt-15 flex-grow mx-auto flex min-h-[53rem] z-20">
+            <div data-aos="fade-up" className="my-[10rem] mx-auto w-[min(33rem,calc(100vw-3rem))] justify-items-center">
                
                     <h2 className="text-3xl font-bold mb-5 text-center text-contact">Get In Touch</h2>
                     <p  className="text-lg text-center mb-10">Have a question or want to work together?</p>
 
-                    <form onSubmit={handleSubmit} className="flex text-sm  min-w-[26rem] flex-col justify-items-center">
+                    <form onSubmit={handleSubmit} className="flex w-full text-base flex-col justify-items-center">
                 
                         {/* Subject Field */}
                         <div className="mb-6">
                             <label htmlFor="subject" className="block mb-2  font-semibold">Subject</label>
-                            <input type="text" autoComplete="new-password" id="subject" name="subject" onChange={handleChange} value={formData.subject} className="bg-input block w-full p-3 rounded-2xl" placeholder="Subject here" />
+                            <input type="text" autoComplete="new-password" id="subject" name="subject" onChange={handleChange} value={formData.subject} className="bg-input block w-full p-4 leading-6 rounded-2xl" placeholder="Subject here" />
                         </div>
                         {/* Message Field */}
                         <div className="mb-6">
                             <label htmlFor="message" className="block mb-2  font-semibold">Your Message</label>
-                            <textarea id="message" name="message" onChange={handleChange} value={formData.message} rows={10} className="bg-input block w-full p-3 rounded-2xl" placeholder="Write your thoughts here..." />
+                            <textarea id="message" name="message" onChange={handleChange} value={formData.message} rows={10} className="bg-input block w-full p-4 leading-6 rounded-2xl" placeholder="Write your thoughts here..." />
                         </div>
                         {/* Submit Button */}
                         <button type="submit" className="outline-action send-action border mt-4 font-bold py-2 px-4 w-[15rem] mx-auto rounded-xl">Send Message</button>

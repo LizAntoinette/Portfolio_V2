@@ -3,10 +3,10 @@ import Image from "next/image";
 
 export default function Project() {
     return (
-        <section id="project" className="mt-15 flex-grow flex h-[120rem] z-20">
+        <section id="project" className="mt-15 flex-grow flex min-h-[120rem] z-20">
             <div className="flex mx-auto w-3/4 flex-col mt-32">
                 <div className='mb-7'  data-aos="fade-up">
-                    <p className="section-heading text-[30px] mb-6 font-semibold w-full border-b-[1px] line-sub my-10 ">
+                    <p className="section-heading text-[32px] mb-6 font-semibold w-full border-b-[1px] line-sub my-10 ">
                         
                         <span className='section-title-fill project-title-fill pr-3'>
                             My <span className='title-name'>Personal Projects</span>
@@ -18,7 +18,7 @@ export default function Project() {
         
                     <div className="relative mt-10 flex-col -z-10">
                         <a href='https://github.com/LizAntoinette/budget-tracker-frontend' target="_blank" >
-                            <Image src="/images/budget-tracker2.png" className="max-w-[650px]" alt="Halcyon Theme" width={650} height={650}/>
+                            <Image src="/images/budget-tracker2.png" className="w-full max-w-[650px] h-auto" alt="Halcyon Theme" width={650} height={650}/>
                             <div className="absolute inset-0 max-w-[650px] bg-gradient-to-t from-[#EA9D34] hover:opacity-0 to-transparent opacity-70 div-gradient-left fade-down-hover"></div>
                         </a>
                     </div>
@@ -28,17 +28,17 @@ export default function Project() {
                             <h1 className="text-3xl font-bold mb-2">Budget Tracker</h1>
                         </a>
                         <p className="text-lg pb-6 company-color">Spring boot + ReactJS</p>
-                        <div className="surface-card max-w-[540px] -ml-[112px] px-6 py-5 mb-6 rounded-2xl" >
-                            <p className="text-sm leading-7">A budget tracking app with a user-friendly dashboard and graphs.
+                        <div className="surface-card max-w-[540px] ml-0 lg:-ml-[112px] px-6 py-5 mb-6 rounded-2xl" >
+                            <p className="text-base leading-7">A budget tracking app with a user-friendly dashboard and graphs.
                                 Users can easily manage their finances with features that let them create, read, update, and delete budget entries.</p>
                         </div>
                         
-                        <div className="flex space-x-4  justify-end">
-                            <p className="text-primary px-1 text-xs py-2">Java</p>
-                            <p className="text-primary px-1 text-xs py-2">ReactJS</p>
-                            <p className="text-primary px-1 text-xs py-2">Typescript</p>
-                            <p className="text-primary px-1 text-xs py-2">TailwindCSS</p>
-                            <p className="text-primary px-1 text-xs py-2">MongoDB</p>
+                        <div className="flex flex-wrap gap-x-4 gap-y-1 justify-end">
+                            <p className="text-primary px-1 text-sm font-medium py-2">Java</p>
+                            <p className="text-primary px-1 text-sm font-medium py-2">ReactJS</p>
+                            <p className="text-primary px-1 text-sm font-medium py-2">Typescript</p>
+                            <p className="text-primary px-1 text-sm font-medium py-2">TailwindCSS</p>
+                            <p className="text-primary px-1 text-sm font-medium py-2">MongoDB</p>
                         </div>
                         {/* <div className=" flex m-3 justify-end">
                             <a href="https://github.com/LizAntoinette" className="text-gray-400 hover:text-gray-300 mx-2">
@@ -59,22 +59,22 @@ export default function Project() {
                             <h1 className="text-3xl font-bold mb-2">Simple Task Scheduler</h1>
                         </a>
                         <p className="text-lg pb-6 company-color">Django + Angular</p>
-                        <div className="surface-card max-w-[540px] -mr-[112px] px-6 py-5 mb-6 rounded-2xl z-30" >
-                            <p className="text-sm leading-7">A simple task scheduling website. Users can create, read, update, and delete tasks, making it easy to stay organized and manage their time.</p>
+                        <div className="surface-card max-w-[540px] mr-0 lg:-mr-[112px] px-6 py-5 mb-6 rounded-2xl z-30" >
+                            <p className="text-base leading-7">A simple task scheduling website. Users can create, read, update, and delete tasks, making it easy to stay organized and manage their time.</p>
                         </div>
                         
-                        <div className="flex space-x-4  justify-start">
-                            <p className="text-primary px-1 text-xs py-2">Python</p>
-                            <p className="text-primary px-1 text-xs py-2">AnguralJS</p>
-                            <p className="text-primary px-1 text-xs py-2">GraphQL</p>
-                            <p className="text-primary px-1 text-xs py-2">SASS</p>
-                            <p className="text-primary px-1 text-xs py-2">TailwindCSS</p>
-                            <p className="text-primary px-1 text-xs py-2">MongoDB</p>
+                        <div className="flex flex-wrap gap-x-4 gap-y-1 justify-start">
+                            <p className="text-primary px-1 text-sm font-medium py-2">Python</p>
+                            <p className="text-primary px-1 text-sm font-medium py-2">AnguralJS</p>
+                            <p className="text-primary px-1 text-sm font-medium py-2">GraphQL</p>
+                            <p className="text-primary px-1 text-sm font-medium py-2">SASS</p>
+                            <p className="text-primary px-1 text-sm font-medium py-2">TailwindCSS</p>
+                            <p className="text-primary px-1 text-sm font-medium py-2">MongoDB</p>
                         </div>
                     </div>
                     <div className="relative flex-col -z-10">
                         <a href='https://github.com/LizAntoinette/Scheduler' target="_blank" >
-                            <Image src="/images/task4.png" className="max-w-[650px]" alt="Halcyon Theme" width={650} height={650} />
+                            <Image src="/images/task4.png" className="w-full max-w-[650px] h-auto" alt="Halcyon Theme" width={650} height={650} />
                             <div className="absolute inset-0 max-w-[650px] bg-gradient-to-t from-[#EA9D34] hover:opacity-0 to-transparent opacity-70 div-gradient-right fade-down-hover"></div>
                         </a>
                     </div>
@@ -85,7 +85,7 @@ export default function Project() {
     
                     <div className="relative mt-10 flex-col -z-10">
                         <a href='https://github.com/LizAntoinette/Translator' target='_blank'>
-                            <Image src="/images/trans.png" className="max-w-[650px]" alt="Halcyon Theme" width={650} height={650}/>
+                            <Image src="/images/trans.png" className="w-full max-w-[650px] h-auto" alt="Halcyon Theme" width={650} height={650}/>
                             <div className="absolute inset-0 max-w-[650px] bg-gradient-to-t from-[#EA9D34] to-transparent  opacity-70 div-gradient-left fade-down-hover"></div>
                         </a>
                     </div>
@@ -95,16 +95,16 @@ export default function Project() {
                             <h1 className="text-3xl font-bold mb-2">Translator & Learning tool with AI</h1>
                         </a>
                         <p className="text-lg pb-6 company-color">ExpressJS + Vuejs</p>
-                        <div className="surface-card max-w-[540px] -ml-[112px] px-6 py-5 mb-6 rounded-2xl" >
-                            <p className="text-sm leading-7"> A language learning app that translates text, offers exercises, and allows users to chat with an AI. This makes learning new languages interactive and fun. </p>
+                        <div className="surface-card max-w-[540px] ml-0 lg:-ml-[112px] px-6 py-5 mb-6 rounded-2xl" >
+                            <p className="text-base leading-7"> A language learning app that translates text, offers exercises, and allows users to chat with an AI. This makes learning new languages interactive and fun. </p>
                         </div>
                         
-                        <div className="flex space-x-4  justify-end">
-                            <p className="text-primary px-1 text-xs py-2">NodeJs</p>
-                            <p className="text-primary px-1 text-xs py-2">Vuejs</p>
-                            <p className="text-primary px-1 text-xs py-2">Javacript</p>
-                            <p className="text-primary px-1 text-xs py-2">Tailwind CSS</p>
-                            <p className="text-primary px-1 text-xs py-2">Firbase</p>
+                        <div className="flex flex-wrap gap-x-4 gap-y-1 justify-end">
+                            <p className="text-primary px-1 text-sm font-medium py-2">NodeJs</p>
+                            <p className="text-primary px-1 text-sm font-medium py-2">Vuejs</p>
+                            <p className="text-primary px-1 text-sm font-medium py-2">Javacript</p>
+                            <p className="text-primary px-1 text-sm font-medium py-2">Tailwind CSS</p>
+                            <p className="text-primary px-1 text-sm font-medium py-2">Firbase</p>
                         </div>
                     </div>
                 

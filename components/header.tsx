@@ -7,6 +7,7 @@ const THEME_STORAGE_KEY = "portfolio-theme";
 const navItems = [
   { id: "home", label: "Home" },
   { id: "experience", label: "Experience" },
+  { id: "masters", label: "MSCS" },
   { id: "project", label: "Projects" },
   { id: "contact", label: "Contact" },
 ] as const;

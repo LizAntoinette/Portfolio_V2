@@ -66,8 +66,12 @@ html {
 
 body {
   font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  line-height: 1.65;
   color: var(--text-primary);
   background: var(--page-end);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
 main{
@@ -92,6 +96,20 @@ main{
   background-size: 100% 100%;
   background-position: 0px 0px;
   background-image: linear-gradient(-3deg, var(--section-alt) 8%, var(--page-start) 75%);
+}
+
+#masters {
+  background-size: 100% 100%;
+  background-position: 0 0;
+  background-image: linear-gradient(
+    to bottom,
+    var(--section-alt) 0%,
+    var(--page-end) 18%,
+    var(--page-start) 40%,
+    var(--page-start) 64%,
+    var(--page-end) 84%,
+    var(--section-alt) 100%
+  );
 }
 
 #project{
@@ -314,6 +332,10 @@ html[data-theme="light"] .title-name {
   border-color: var(--border-color);
 }
 
+.section-divider {
+  background: var(--border-color);
+}
+
 .project-title-fill {
   background: var(--project-heading-fill);
 }
@@ -322,6 +344,44 @@ html[data-theme="light"] .title-name {
   color: var(--text-secondary);
   background: var(--surface);
   box-shadow: 0 12px 30px var(--header-shadow);
+}
+
+.masters-image-link:focus-visible,
+.masters-project-link:focus-visible {
+  outline: 2px solid var(--nav-accent);
+  outline-offset: 4px;
+}
+
+.masters-exercise-image {
+  transition: transform 350ms ease, filter 350ms ease;
+}
+
+.masters-image-link:hover .masters-exercise-image {
+  filter: saturate(1.08);
+  transform: scale(1.025);
+}
+
+.study-status {
+  color: var(--nav-accent);
+  background: color-mix(in srgb, var(--nav-accent) 13%, transparent);
+  border: 1px solid color-mix(in srgb, var(--nav-accent) 30%, transparent);
+}
+
+.masters-project-link {
+  color: var(--nav-accent);
+}
+
+.masters-project-link svg {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: transform 180ms ease;
+}
+
+.masters-exercise:hover .masters-project-link svg {
+  transform: translateX(3px);
 }
 
 .experience-tab {
@@ -391,6 +451,16 @@ html[data-theme="light"] .title-name {
   .theme-transition .bg-input {
     transition: none;
   }
+
+  .masters-exercise-image,
+  .masters-project-link svg {
+    transition: none;
+  }
+
+  .masters-image-link:hover .masters-exercise-image,
+  .masters-exercise:hover .masters-project-link svg {
+    transform: none;
+  }
 }
 
 @media (max-width: 768px) {
@@ -407,7 +477,7 @@ html[data-theme="light"] .title-name {
   }
 
   .nav-list {
-    font-size: 0.8rem;
+    font-size: 0.875rem;
   }
 
   .theme-toggle {
@@ -415,6 +485,29 @@ html[data-theme="light"] .title-name {
     height: 2.25rem;
   }
 
+}
+
+@media (max-width: 480px) {
+  .site-nav {
+    right: 0.5rem;
+  }
+
+  .nav-item {
+    margin-inline: 0.3rem;
+  }
+
+  .nav-contact {
+    margin-right: 0.4rem;
+  }
+
+  .nav-list {
+    font-size: 0.8125rem;
+  }
+
+  .theme-toggle {
+    width: 2rem;
+    height: 2rem;
+  }
 }
 
 

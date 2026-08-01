@@ -18,7 +18,7 @@ export default function Footer() {
         </div>
 
        
-        <p className="text-muted text-center mt-10 text-sm">
+        <p className="text-muted text-center mt-10 text-[15px]">
                 © 2025 - Liz Antoinette Anguren
         </p>
        
