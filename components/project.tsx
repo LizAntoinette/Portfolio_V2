@@ -6,9 +6,9 @@ export default function Project() {
         <section id="project" className="mt-15 flex-grow flex h-[120rem] z-20">
             <div className="flex mx-auto w-3/4 flex-col mt-32">
                 <div className='mb-7'  data-aos="fade-up">
-                    <p className="text-[30px] mb-6 font-semibold w-full border-b-[1px] border-[#797593ba] line-sub my-10 ">
+                    <p className="section-heading text-[30px] mb-6 font-semibold w-full border-b-[1px] line-sub my-10 ">
                         
-                        <span className='bg-[#0C0C0DFF] pr-3'>
+                        <span className='section-title-fill project-title-fill pr-3'>
                             My <span className='title-name'>Personal Projects</span>
                         </span>
                     </p>
@@ -23,22 +23,22 @@ export default function Project() {
                         </a>
                     </div>
 
-                    <div className=" flex flex-col py-12 text-white text-right justify-end">
+                    <div className="flex flex-col py-12 text-primary text-right justify-end">
                         <a href='https://github.com/LizAntoinette/budget-tracker-frontend' target="_blank" >
                             <h1 className="text-3xl font-bold mb-2">Budget Tracker</h1>
                         </a>
                         <p className="text-lg pb-6 company-color">Spring boot + ReactJS</p>
-                        <div className="max-w-[540px] -ml-[112px] bg-[#272533] px-6 py-5 mb-6 rounded-2xl" >
-                            <p className="text-sm leading-7 text-[#dddddd]">A budget tracking app with a user-friendly dashboard and graphs. 
-                                Users can easily manage their finances with features that let them create, read, update, and delete budget entries.</p>  
+                        <div className="surface-card max-w-[540px] -ml-[112px] px-6 py-5 mb-6 rounded-2xl" >
+                            <p className="text-sm leading-7">A budget tracking app with a user-friendly dashboard and graphs.
+                                Users can easily manage their finances with features that let them create, read, update, and delete budget entries.</p>
                         </div>
                         
                         <div className="flex space-x-4  justify-end">
-                            <p className="text-white px-1 text-xs py-2">Java</p>
-                            <p className="text-white px-1 text-xs py-2">ReactJS</p>
-                            <p className="text-white px-1 text-xs py-2">Typescript</p>
-                            <p className="text-white px-1 text-xs py-2">TailwindCSS</p>
-                            <p className="text-white px-1 text-xs py-2">MongoDB</p>
+                            <p className="text-primary px-1 text-xs py-2">Java</p>
+                            <p className="text-primary px-1 text-xs py-2">ReactJS</p>
+                            <p className="text-primary px-1 text-xs py-2">Typescript</p>
+                            <p className="text-primary px-1 text-xs py-2">TailwindCSS</p>
+                            <p className="text-primary px-1 text-xs py-2">MongoDB</p>
                         </div>
                         {/* <div className=" flex m-3 justify-end">
                             <a href="https://github.com/LizAntoinette" className="text-gray-400 hover:text-gray-300 mx-2">
@@ -54,22 +54,22 @@ export default function Project() {
                 
                 </div>
                 <div  data-aos="fade-right"  className="flex flex-col md:flex-row gap-10 my-[6rem] pl-2.5">
-                    <div className=" flex flex-col py-12 text-white justify-start">
+                    <div className="flex flex-col py-12 text-primary justify-start">
                         <a href='https://github.com/LizAntoinette/Scheduler' target="_blank" >
                             <h1 className="text-3xl font-bold mb-2">Simple Task Scheduler</h1>
                         </a>
                         <p className="text-lg pb-6 company-color">Django + Angular</p>
-                        <div className="max-w-[540px] -mr-[112px] bg-[#272533] px-6 py-5 mb-6 rounded-2xl z-30" >
-                            <p className="text-sm leading-7 text-[#dddddd]">A simple task scheduling website. Users can create, read, update, and delete tasks, making it easy to stay organized and manage their time.</p>  
+                        <div className="surface-card max-w-[540px] -mr-[112px] px-6 py-5 mb-6 rounded-2xl z-30" >
+                            <p className="text-sm leading-7">A simple task scheduling website. Users can create, read, update, and delete tasks, making it easy to stay organized and manage their time.</p>
                         </div>
                         
                         <div className="flex space-x-4  justify-start">
-                            <p className="text-white px-1 text-xs py-2">Python</p>
-                            <p className="text-white px-1 text-xs py-2">AnguralJS</p>
-                            <p className="text-white px-1 text-xs py-2">GraphQL</p>
-                            <p className="text-white px-1 text-xs py-2">SASS</p>
-                            <p className="text-white px-1 text-xs py-2">TailwindCSS</p>
-                            <p className="text-white px-1 text-xs py-2">MongoDB</p>
+                            <p className="text-primary px-1 text-xs py-2">Python</p>
+                            <p className="text-primary px-1 text-xs py-2">AnguralJS</p>
+                            <p className="text-primary px-1 text-xs py-2">GraphQL</p>
+                            <p className="text-primary px-1 text-xs py-2">SASS</p>
+                            <p className="text-primary px-1 text-xs py-2">TailwindCSS</p>
+                            <p className="text-primary px-1 text-xs py-2">MongoDB</p>
                         </div>
                     </div>
                     <div className="relative flex-col -z-10">
@@ -90,21 +90,21 @@ export default function Project() {
                         </a>
                     </div>
 
-                    <div className=" flex flex-col py-12 text-white text-right justify-end mb-10">
+                    <div className="flex flex-col py-12 text-primary text-right justify-end mb-10">
                         <a href='https://github.com/LizAntoinette/Translator' target='_blank'>
                             <h1 className="text-3xl font-bold mb-2">Translator & Learning tool with AI</h1>
                         </a>
                         <p className="text-lg pb-6 company-color">ExpressJS + Vuejs</p>
-                        <div className="max-w-[540px] -ml-[112px] bg-[#272533] px-6 py-5 mb-6 rounded-2xl" >
-                            <p className="text-sm leading-7 text-[#dddddd]"> A language learning app that translates text, offers exercises, and allows users to chat with an AI. This makes learning new languages interactive and fun. </p>  
+                        <div className="surface-card max-w-[540px] -ml-[112px] px-6 py-5 mb-6 rounded-2xl" >
+                            <p className="text-sm leading-7"> A language learning app that translates text, offers exercises, and allows users to chat with an AI. This makes learning new languages interactive and fun. </p>
                         </div>
                         
                         <div className="flex space-x-4  justify-end">
-                            <p className="text-white px-1 text-xs py-2">NodeJs</p>
-                            <p className="text-white px-1 text-xs py-2">Vuejs</p>
-                            <p className="text-white px-1 text-xs py-2">Javacript</p>
-                            <p className="text-white px-1 text-xs py-2">Tailwind CSS</p>
-                            <p className="text-white px-1 text-xs py-2">Firbase</p>
+                            <p className="text-primary px-1 text-xs py-2">NodeJs</p>
+                            <p className="text-primary px-1 text-xs py-2">Vuejs</p>
+                            <p className="text-primary px-1 text-xs py-2">Javacript</p>
+                            <p className="text-primary px-1 text-xs py-2">Tailwind CSS</p>
+                            <p className="text-primary px-1 text-xs py-2">Firbase</p>
                         </div>
                     </div>
                 
@@ -115,4 +115,3 @@ export default function Project() {
 
     );
   }
-  

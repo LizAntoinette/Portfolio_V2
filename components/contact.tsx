@@ -46,15 +46,15 @@ export default function Contact() {
                         {/* Subject Field */}
                         <div className="mb-6">
                             <label htmlFor="subject" className="block mb-2  font-semibold">Subject</label>
-                            <input type="text" autoComplete="new-password" id="subject" name="subject" onChange={handleChange} value={formData.subject} className="bg-input text-white block w-full p-3 rounded-2xl" placeholder="Subject here" />
+                            <input type="text" autoComplete="new-password" id="subject" name="subject" onChange={handleChange} value={formData.subject} className="bg-input block w-full p-3 rounded-2xl" placeholder="Subject here" />
                         </div>
                         {/* Message Field */}
                         <div className="mb-6">
                             <label htmlFor="message" className="block mb-2  font-semibold">Your Message</label>
-                            <textarea id="message" name="message" onChange={handleChange} value={formData.message} rows={10} className="bg-input text-white block w-full p-3 rounded-2xl" placeholder="Write your thoughts here..." />
+                            <textarea id="message" name="message" onChange={handleChange} value={formData.message} rows={10} className="bg-input block w-full p-3 rounded-2xl" placeholder="Write your thoughts here..." />
                         </div>
                         {/* Submit Button */}
-                        <button type="submit" className="border-[#d7827e] border mt-4 hover:bg-[#ebbcba] hover:text-[#191724] text-[#ebbcba] font-bold py-2 px-4 rounded w-[15rem] mx-auto rounded-xl">Send Message</button>
+                        <button type="submit" className="outline-action send-action border mt-4 font-bold py-2 px-4 w-[15rem] mx-auto rounded-xl">Send Message</button>
                     </form>
                 
             </div>
@@ -63,4 +63,3 @@ export default function Contact() {
 
     );
   }
-  
