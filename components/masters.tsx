@@ -32,8 +32,8 @@ const mastersProjects = [
 
 export default function Masters() {
   return (
-    <section id="masters" className="masters-section flex min-h-screen items-center py-28 z-20">
-      <div className="mx-auto w-3/4 max-w-6xl">
+    <section id="masters" className="masters-section flex min-h-screen items-center py-20 sm:py-24 lg:py-28 z-20">
+      <div className="mx-auto w-[calc(100%_-_2rem)] max-w-6xl sm:w-4/5 lg:w-3/4">
         <div className="mb-12 flex flex-col gap-5 sm:flex-row sm:items-center" data-aos="fade-up">
           <h2 className="text-2xl font-semibold sm:shrink-0 sm:text-[32px]">
             My <span className="title-name">Master&apos;s Journey</span>
@@ -41,7 +41,7 @@ export default function Masters() {
           <span className="section-divider h-px w-full" aria-hidden="true" />
         </div>
 
-        <div className="mb-20 py-4" data-aos="fade-up">
+        <div className="mb-14 py-2 sm:mb-20 sm:py-4" data-aos="fade-up">
           <div className="flex flex-col justify-between gap-7 lg:flex-row lg:items-center">
             <div>
               <span className="study-status mb-4 inline-flex rounded-full px-3 py-1 text-sm font-bold uppercase tracking-[0.12em]">
@@ -65,7 +65,7 @@ export default function Masters() {
           <h3 className="mt-2 text-2xl font-bold sm:text-3xl">Exercises &amp; course projects</h3>
         </div>
 
-        <div className="space-y-28 lg:space-y-36">
+        <div className="space-y-20 sm:space-y-28 lg:space-y-36">
           {mastersProjects.map((project, index) => {
             const isReversed = index % 2 === 1;
 
@@ -94,7 +94,7 @@ export default function Masters() {
                         className="masters-exercise-image object-cover object-top"
                       />
                       <div
-                        className={`absolute inset-0 bg-gradient-to-t from-[#EA9D34] to-transparent opacity-60 transition-opacity duration-300 group-hover:opacity-0 ${
+                        className={`absolute inset-0 bg-gradient-to-t from-[#EA9D34] to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-0 lg:opacity-60 ${
                           isReversed ? "div-gradient-right" : "div-gradient-left"
                         }`}
                         aria-hidden="true"
@@ -112,12 +112,12 @@ export default function Masters() {
                     Graduate coursework
                   </p>
                   <a href={project.href} target="_blank" rel="noopener noreferrer">
-                    <h4 className="mb-2 text-3xl font-bold leading-tight">{project.title}</h4>
+                    <h4 className="mb-2 text-2xl font-bold leading-tight sm:text-3xl">{project.title}</h4>
                   </a>
                   <p className="pb-6 text-lg company-color">{project.tags.join(" · ")}</p>
 
                   <div
-                    className={`surface-card max-w-[540px] rounded-2xl px-6 py-5 mb-5 ${
+                    className={`masters-project-description mb-5 w-full max-w-[540px] ${
                       isReversed ? "lg:-mr-[112px]" : "lg:-ml-[112px]"
                     }`}
                   >
@@ -126,7 +126,7 @@ export default function Masters() {
 
                   <div
                     className={`flex flex-wrap gap-x-4 gap-y-1 ${
-                      isReversed ? "justify-start" : "justify-end"
+                      isReversed ? "justify-start" : "justify-start lg:justify-end"
                     }`}
                   >
                     {project.tags.map((tag) => (

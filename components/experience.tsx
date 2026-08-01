@@ -1,74 +1,133 @@
 "use client";
-import React, { useState,  useEffect } from 'react';
-import AOS from 'aos';
+
+import React, { useEffect, useState } from "react";
+import AOS from "aos";
+
+const employers = [
+    { name: "Coach Catalyst", compactName: "Coach Catalyst", panelId: "coach-catalyst" },
+    { name: "Senarysoft LLC", compactName: "Senarysoft", panelId: "senarysoft" },
+    {
+        name: "Eastern Samar State University",
+        compactName: "ESSU",
+        panelId: "eastern-samar-state-university",
+    },
+    { name: "WinterWinds", compactName: "WinterWind", panelId: "winterwind" },
+] as const;
+
+type EmployerName = (typeof employers)[number]["name"];
 
 
 export default function Experience() {
-    const [activeTab, setActiveTab] = useState<string>('Coach Catalyst'); // Specify type as string
+    const [activeTab, setActiveTab] = useState<EmployerName>("Coach Catalyst");
 
     useEffect(() => {
         AOS.refresh();
     }, [activeTab]);
     
 
-    const openCity = (tabName: string) => { // Specify type of tabName
+    const openCity = (tabName: EmployerName) => {
         setActiveTab(tabName);
+    };
+
+    const handleTabKeyDown = (
+        event: React.KeyboardEvent<HTMLButtonElement>,
+        currentIndex: number,
+        group: "mobile" | "desktop",
+    ) => {
+        let nextIndex = currentIndex;
+
+        if (event.key === "ArrowRight" || event.key === "ArrowDown") {
+            nextIndex = (currentIndex + 1) % employers.length;
+        } else if (event.key === "ArrowLeft" || event.key === "ArrowUp") {
+            nextIndex = (currentIndex - 1 + employers.length) % employers.length;
+        } else if (event.key === "Home") {
+            nextIndex = 0;
+        } else if (event.key === "End") {
+            nextIndex = employers.length - 1;
+        } else {
+            return;
+        }
+
+        event.preventDefault();
+        const nextEmployer = employers[nextIndex];
+        openCity(nextEmployer.name);
+        document.getElementById(`${group}-tab-${nextEmployer.panelId}`)?.focus();
     };
 
 
     return (
-        <section id="experience" className="mt-20 flex-grow flex items-center min-h-screen py-28 z-20">
-            <div className="flex m-auto w-4/5 max-w-6xl flex-col"  data-aos="fade-left">
-                <div className='mb-12'>
-                    <p className="section-heading text-[32px] mb-6 font-semibold w-full border-b-[1px] line-sub my-10 ">
+        <section id="experience" className="mt-12 flex min-h-screen flex-grow items-center py-20 sm:mt-16 sm:py-24 lg:mt-20 lg:py-28 z-20">
+            <div className="m-auto flex w-[calc(100%_-_2rem)] max-w-6xl flex-col sm:w-4/5" data-aos="fade-left">
+                <div className='mb-8 sm:mb-12'>
+                    <p className="section-heading text-[28px] sm:text-[32px] mb-6 font-semibold w-full border-b-[1px] line-sub my-10 ">
                         <span className='section-title-fill pr-4'>
                             My <span className='title-name'>Experience</span></span></p>
                 </div>
-                <div className="flex flex-col lg:flex-row m-auto w-full items-start gap-6">
-                    <div className="flex w-full overflow-x-auto lg:block lg:w-1/3 text-[17px] leading-snug">
-                        <button
-                            className={`experience-tab flex-none min-w-[11rem] lg:block lg:min-w-0 border-l-[1px] py-5 px-5 w-full text-left ${
-                                activeTab === 'Coach Catalyst' && 'is-active font-semibold border-l-[2px]'
+                <div className="m-auto flex w-full flex-col items-start gap-6 lg:flex-row">
+                    <div
+                        className="experience-mobile-tabs grid w-full lg:hidden"
+                        role="tablist"
+                        aria-label="Select a company"
+                    >
+                        {employers.map((employer, index) => (
+                            <button
+                                key={employer.name}
+                                id={`mobile-tab-${employer.panelId}`}
+                                type="button"
+                                role="tab"
+                                aria-selected={activeTab === employer.name}
+                                aria-controls={`experience-panel-${employer.panelId}`}
+                                tabIndex={activeTab === employer.name ? 0 : -1}
+                                className={`experience-mobile-tab ${
+                                    activeTab === employer.name ? "is-active" : ""
                                 }`}
-                            onClick={() => openCity('Coach Catalyst')}
-                        >
-                            Coach Catalyst
-                        </button>
-                        <button
-                            className={`experience-tab flex-none min-w-[11rem] lg:block lg:min-w-0 border-l-[1px] py-5 px-5 w-full text-left ${
-                                activeTab === 'Senarysoft LLC' && 'is-active font-semibold border-l-[2px]'
-                                }`}
-                            onClick={() => openCity('Senarysoft LLC')}
-                        >
-                            Senarysoft LLC
-                        </button>
-                        <button
-                            className={`experience-tab flex-none min-w-[16rem] lg:block lg:min-w-0 border-l-[1px] py-5 px-5 w-full text-left ${
-                                activeTab === 'Eastern Samar State University' && 'is-active font-semibold border-l-[2px]'
-                                }`}
-                            onClick={() => openCity('Eastern Samar State University')}
-                        >
-                            Eastern Samar State University
-                        </button>
-                        <button
-                            className={`experience-tab flex-none min-w-[11rem] lg:block lg:min-w-0 border-l-[1px] py-5 px-5 w-full text-left ${
-                                activeTab === 'WinterWinds' && 'is-active font-semibold border-l-[2px]'
-                                }`}
-                            onClick={() => openCity('WinterWinds')}
-                        >
-                            WinterWinds
-                        </button>
+                                onClick={() => openCity(employer.name)}
+                                onKeyDown={(event) => handleTabKeyDown(event, index, "mobile")}
+                            >
+                                {employer.compactName}
+                            </button>
+                        ))}
                     </div>
-                    <div className="w-full lg:w-2/3 min-h-[34rem] px-0 sm:px-5 text-primary">
+
+                    <div
+                        className="experience-tabs hidden text-[17px] leading-snug lg:block lg:w-1/3"
+                        role="tablist"
+                        aria-label="Select a company"
+                    >
+                        {employers.map((employer, index) => (
+                            <button
+                                key={employer.name}
+                                id={`desktop-tab-${employer.panelId}`}
+                                type="button"
+                                role="tab"
+                                aria-selected={activeTab === employer.name}
+                                aria-controls={`experience-panel-${employer.panelId}`}
+                                tabIndex={activeTab === employer.name ? 0 : -1}
+                                className={`experience-tab block w-full border-l-[1px] px-5 py-5 text-left ${
+                                    activeTab === employer.name
+                                        ? "is-active border-l-[2px] font-semibold"
+                                        : ""
+                                }`}
+                                onClick={() => openCity(employer.name)}
+                                onKeyDown={(event) => handleTabKeyDown(event, index, "desktop")}
+                            >
+                                {employer.name}
+                            </button>
+                        ))}
+                    </div>
+                    <div className="w-full min-h-0 px-0 text-primary sm:px-5 lg:min-h-[34rem] lg:w-2/3">
                         <div
                             data-aos="fade-left"
                             data-aos-duration="900"
-                            id="Coach_Catalyst"
+                            id="experience-panel-coach-catalyst"
+                            role="tabpanel"
+                            aria-label="Coach Catalyst experience"
+                            tabIndex={0}
                             className={`tabcontent ${
                                 activeTab === 'Coach Catalyst' ? 'block' : 'hidden'
                                 } py-4 px-1 sm:px-7`}
                         >
-                            <p className='font-bold text-2xl leading-tight'>Full-Stack Developer<span className='company-color'> @ Coach Catalyst</span></p>
+                            <p className='font-bold text-xl sm:text-2xl leading-tight'>Full-Stack Developer<span className='company-color mt-1 block sm:mt-0 sm:inline'> @ Coach Catalyst</span></p>
                             <p className='mt-2 mb-5 text-base font-semibold italic'>January 2023 – Present</p>
 
                             <ul className='list-disc pl-5 space-y-3 text-left text-base text-secondary leading-7'>
@@ -90,12 +149,15 @@ export default function Experience() {
                         <div
                             data-aos="fade-left"
                             data-aos-duration="900"
-                            id="Senarysoft_LLC"
+                            id="experience-panel-senarysoft"
+                            role="tabpanel"
+                            aria-label="Senarysoft experience"
+                            tabIndex={0}
                             className={`tabcontent ${
                                 activeTab === 'Senarysoft LLC' ? 'block' : 'hidden'
                             } py-6 px-1 sm:px-7`}
                         >
-                            <p className='font-bold text-2xl leading-tight text-primary'>Software Engineer<span className='company-color'> @ Senarysoft LLC</span></p>
+                            <p className='font-bold text-xl sm:text-2xl leading-tight text-primary'>Software Engineer<span className='company-color mt-1 block sm:mt-0 sm:inline'> @ Senarysoft LLC</span></p>
                             <p className='mt-2 mb-5 text-base font-semibold italic'>February 2022 – June 2023</p>
 
                             <ul className='list-disc pl-5 space-y-3 text-left text-base text-secondary leading-7'>
@@ -114,12 +176,15 @@ export default function Experience() {
                         <div
                             data-aos="fade-left"
                             data-aos-duration="900"
-                            id="essu"
+                            id="experience-panel-eastern-samar-state-university"
+                            role="tabpanel"
+                            aria-label="Eastern Samar State University experience"
+                            tabIndex={0}
                             className={`tabcontent ${
                                 activeTab === 'Eastern Samar State University' ? 'block' : 'hidden'
                             } py-6 px-1 sm:px-7`}
                         >
-                            <p className='font-bold text-2xl leading-tight text-primary'>Computer Science Lecturer<br /><span className='company-color'> @ Eastern Samar State University</span></p>
+                            <p className='font-bold text-xl sm:text-2xl leading-tight text-primary'>Computer Science Lecturer<span className='company-color mt-1 block'> @ Eastern Samar State University</span></p>
                             <p className='mt-2 mb-5 text-base font-semibold italic'>August 2019 – December 2021</p>
 
                             <ul className='list-disc pl-5 space-y-3 text-left text-base text-secondary leading-7'>
@@ -138,12 +203,15 @@ export default function Experience() {
                         <div
                             data-aos="fade-left"
                             data-aos-duration="900"
-                            id="WinterWind"
+                            id="experience-panel-winterwind"
+                            role="tabpanel"
+                            aria-label="WinterWind experience"
+                            tabIndex={0}
                             className={`tabcontent ${
                                 activeTab === 'WinterWinds' ? 'block' : 'hidden'
                             } py-6 px-1 sm:px-7`}
                         >
-                            <p className='font-bold text-2xl leading-tight text-primary'>Junior Web Developer<span className='company-color'> @ WinterWind</span></p>
+                            <p className='font-bold text-xl sm:text-2xl leading-tight text-primary'>Junior Web Developer<span className='company-color mt-1 block sm:mt-0 sm:inline'> @ WinterWind</span></p>
                             <p className='mt-2 mb-5 text-base font-semibold italic'>May 2018 – December 2018</p>
 
                             <ul className='list-disc pl-5 space-y-3 text-left text-base text-secondary leading-7'>

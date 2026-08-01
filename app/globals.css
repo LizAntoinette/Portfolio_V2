@@ -62,16 +62,19 @@ html {
   scroll-behavior: smooth;
 }
 
-
-
 body {
   font-family: 'Montserrat', sans-serif;
   font-size: 16px;
   line-height: 1.65;
   color: var(--text-primary);
   background: var(--page-end);
+  overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+}
+
+section {
+  scroll-margin-top: 90px;
 }
 
 main{
@@ -194,18 +197,6 @@ html[data-theme="light"] .title-name {
   box-shadow: 0 0 0 3px color-mix(in srgb, var(--nav-accent) 22%, transparent);
 }
 
-/* on project page */
-@keyframes fadeDown {
-  from {
-      opacity: 0.7;
-      transform: translateY(0);
-  }
-  to {
-      opacity: 0;
-      transform: translateY(0px);
-  }
-}
-
 .div-gradient-left{
   background: linear-gradient(20deg, #EA9D34, transparent);
 }
@@ -213,11 +204,6 @@ html[data-theme="light"] .title-name {
 .div-gradient-right{
   background: linear-gradient(-20deg, #EA9D34, transparent);
 }
-
-.fade-down-hover:hover {
-  animation: fadeDown 1s forwards;
-}
-
 
 .header-glass{
   height: 90px;
@@ -302,12 +288,50 @@ html[data-theme="light"] .title-name {
   stroke-linejoin: round;
 }
 
+.mobile-header-actions {
+  display: none;
+}
+
+.mobile-menu-toggle {
+  display: inline-flex;
+  width: 2.75rem;
+  height: 2.75rem;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-primary);
+  background: var(--surface-translucent);
+  border: 1px solid var(--border-color);
+  border-radius: 9999px;
+  cursor: pointer;
+}
+
+.mobile-menu-toggle:hover {
+  color: var(--nav-accent);
+  border-color: var(--nav-accent);
+}
+
+.mobile-menu-toggle:focus-visible {
+  outline: 2px solid var(--nav-accent);
+  outline-offset: 3px;
+}
+
+.mobile-menu-toggle svg {
+  width: 1.25rem;
+  height: 1.25rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
 .theme-transition body,
 .theme-transition main,
 .theme-transition section,
 .theme-transition header,
 .theme-transition .section-title-fill,
 .theme-transition .surface-card,
+.theme-transition .masters-project-description,
 .theme-transition .bg-input {
   transition: color 250ms ease, background-color 250ms ease, background-image 250ms ease, border-color 250ms ease, box-shadow 250ms ease;
 }
@@ -347,6 +371,7 @@ html[data-theme="light"] .title-name {
 }
 
 .masters-image-link:focus-visible,
+.portfolio-image-link:focus-visible,
 .masters-project-link:focus-visible {
   outline: 2px solid var(--nav-accent);
   outline-offset: 4px;
@@ -384,8 +409,74 @@ html[data-theme="light"] .title-name {
   transform: translateX(3px);
 }
 
+.masters-project-description {
+  color: var(--text-secondary);
+}
+
 .experience-tab {
   border-color: var(--border-color);
+}
+
+.experience-mobile-tabs {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  background: transparent;
+}
+
+.experience-mobile-tab {
+  position: relative;
+  min-width: 0;
+  min-height: 3rem;
+  padding: 0.7rem 0.55rem;
+  overflow: hidden;
+  color: var(--text-secondary);
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid var(--border-color);
+  border-radius: 0;
+  font-size: 0.875rem;
+  font-weight: 650;
+  line-height: 1.2;
+  text-align: center;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: color 180ms ease, background-color 180ms ease, border-color 180ms ease,
+    box-shadow 180ms ease, transform 180ms ease;
+}
+
+.experience-mobile-tab:hover {
+  color: var(--text-primary);
+  background: color-mix(in srgb, var(--nav-accent) 8%, transparent);
+}
+
+.experience-mobile-tab.is-active {
+  color: var(--warm-accent);
+  background: var(--surface);
+  border-bottom: 2px solid var(--warm-accent);
+  box-shadow: none;
+}
+
+.experience-mobile-tab:active {
+  transform: scale(0.98);
+}
+
+.experience-mobile-tab:focus-visible {
+  outline: 2px solid var(--nav-accent);
+  outline-offset: 2px;
+}
+
+.experience-tabs {
+  scrollbar-width: thin;
+  scrollbar-color: var(--border-color) transparent;
+}
+
+.experience-tabs::-webkit-scrollbar {
+  height: 0.35rem;
+}
+
+.experience-tabs::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 9999px;
 }
 
 .experience-tab:hover,
@@ -448,105 +539,132 @@ html[data-theme="light"] .title-name {
   .theme-transition header,
   .theme-transition .section-title-fill,
   .theme-transition .surface-card,
+  .theme-transition .masters-project-description,
   .theme-transition .bg-input {
     transition: none;
   }
 
   .masters-exercise-image,
+  .portfolio-image-link img,
+  .site-nav,
   .masters-project-link svg {
-    transition: none;
+    transition: none !important;
   }
 
   .masters-image-link:hover .masters-exercise-image,
+  .portfolio-image-link:hover img,
   .masters-exercise:hover .masters-project-link svg {
     transform: none;
+  }
+
+  .experience-mobile-tab {
+    transition: none;
+  }
+}
+
+@media (min-width: 640px) and (max-width: 1023px) {
+  .experience-mobile-tabs {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .masters-project-description {
+    padding: 1.25rem 1.5rem;
+    background: var(--surface);
+    border-radius: 1rem;
+    box-shadow: 0 12px 30px var(--header-shadow);
+  }
+
+  .portfolio-project-description {
+    width: calc(100% + clamp(5rem, 8vw, 9rem));
+    max-width: calc(540px + clamp(5rem, 8vw, 9rem));
   }
 }
 
 @media (max-width: 768px) {
+  section {
+    scroll-margin-top: 72px;
+  }
+
+  .header-glass {
+    height: 72px;
+  }
+
+  .mobile-header-actions {
+    position: absolute;
+    top: 50%;
+    right: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+    transform: translateY(-50%);
+  }
+
+  .mobile-theme-toggle,
+  .mobile-menu-toggle {
+    width: 2.75rem;
+    height: 2.75rem;
+  }
+
   .site-nav {
-    right: 0.75rem;
+    top: calc(100% + 0.5rem);
+    right: 1rem;
+    left: 1rem;
+    max-height: calc(100dvh - 6rem);
+    overflow-y: auto;
+    color: var(--text-primary);
+    background: var(--header-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 1.25rem;
+    box-shadow: 0 18px 40px var(--header-shadow);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-0.75rem) scale(0.98);
+    transform-origin: top right;
+    pointer-events: none;
+    transition: opacity 180ms ease, transform 180ms ease, visibility 180ms ease;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
   }
 
-  .nav-item {
-    margin-inline: 0.55rem;
-  }
-
-  .nav-contact {
-    margin-right: 0.6rem;
+  .site-nav.is-open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0) scale(1);
+    pointer-events: auto;
   }
 
   .nav-list {
-    font-size: 0.875rem;
-  }
-
-  .theme-toggle {
-    width: 2.25rem;
-    height: 2.25rem;
-  }
-
-}
-
-@media (max-width: 480px) {
-  .site-nav {
-    right: 0.5rem;
+    flex-direction: column;
+    align-items: stretch;
+    margin-top: 0;
+    padding: 0.75rem;
+    font-size: 1rem;
   }
 
   .nav-item {
-    margin-inline: 0.3rem;
+    width: 100%;
+    margin: 0;
   }
 
   .nav-contact {
-    margin-right: 0.4rem;
+    margin-right: 0;
   }
 
-  .nav-list {
-    font-size: 0.8125rem;
+  .nav-link {
+    width: 100%;
+    min-height: 2.75rem;
+    padding: 0.65rem 0.9rem;
+    border-radius: 0.75rem;
   }
 
-  .theme-toggle {
-    width: 2rem;
-    height: 2rem;
+  .nav-link:hover,
+  .nav-link.is-active {
+    background: color-mix(in srgb, var(--nav-accent) 10%, transparent);
   }
-}
 
-
-/* Extra Small Devices (Phones) */
-@media (max-width: 576px) {
-  /* body {
-      background-color: lightblue;
-  } */
-  /* Other styles for phones */
-}
-
-/* Small Devices (Tablets) */
-@media (min-width: 577px) and (max-width: 768px) {
-  /* body {
-      background-color: lightgreen;
-  } */
-  /* Other styles for tablets */
-}
-
-/* Medium Devices (Desktops) */
-@media (min-width: 769px) and (max-width: 992px) {
-  /* body {
-      background-color: lightyellow;
-  } */
-  /* Other styles for desktops */
-}
-
-/* Large Devices (Large Desktops) */
-@media (min-width: 993px) and (max-width: 1200px) {
-  /* body {
-      background-color: lightcoral;
-  } */
-  /* Other styles for large desktops */
-}
-
-/* Extra Large Devices (Large Desktops) */
-@media (min-width: 1201px) {
-  /* body {
-      background-color: lightpink;
-  } */
-  /* Other styles for extra large desktops */
+  .desktop-theme-item {
+    display: none;
+  }
 }

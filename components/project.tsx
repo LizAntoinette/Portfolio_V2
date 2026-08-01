@@ -1,117 +1,121 @@
-import React from 'react';
 import Image from "next/image";
 
+const projects = [
+  {
+    title: "Budget Tracker",
+    stack: "Spring Boot + React",
+    description:
+      "A budget tracking app with a user-friendly dashboard and graphs. Users can create, read, update, and delete budget entries to manage their finances more easily.",
+    image: "/images/budget-tracker2.png",
+    imageAlt: "Budget Tracker dashboard and financial summary",
+    href: "https://github.com/LizAntoinette/budget-tracker-frontend",
+    tags: ["Java", "React", "TypeScript", "Tailwind CSS", "MongoDB"],
+  },
+  {
+    title: "Simple Task Scheduler",
+    stack: "Django + Angular",
+    description:
+      "A task scheduling website where users can create, read, update, and delete tasks, making it easier to stay organized and manage their time.",
+    image: "/images/task4.png",
+    imageAlt: "Simple Task Scheduler interface",
+    href: "https://github.com/LizAntoinette/Scheduler",
+    tags: ["Python", "Angular", "GraphQL", "Sass", "Tailwind CSS", "MongoDB"],
+  },
+  {
+    title: "Translator & Learning Tool with AI",
+    stack: "Express.js + Vue.js",
+    description:
+      "A language-learning app that translates text, provides exercises, and lets users chat with an AI for a more interactive learning experience.",
+    image: "/images/trans.png",
+    imageAlt: "AI translator and language-learning interface",
+    href: "https://github.com/LizAntoinette/Translator",
+    tags: ["Node.js", "Vue.js", "JavaScript", "Tailwind CSS", "Firebase"],
+  },
+] as const;
+
 export default function Project() {
-    return (
-        <section id="project" className="mt-15 flex-grow flex min-h-[120rem] z-20">
-            <div className="flex mx-auto w-3/4 flex-col mt-32">
-                <div className='mb-7'  data-aos="fade-up">
-                    <p className="section-heading text-[32px] mb-6 font-semibold w-full border-b-[1px] line-sub my-10 ">
-                        
-                        <span className='section-title-fill project-title-fill pr-3'>
-                            My <span className='title-name'>Personal Projects</span>
-                        </span>
-                    </p>
+  return (
+    <section id="project" className="flex flex-grow py-20 sm:py-24 lg:py-28 z-20">
+      <div className="mx-auto flex w-[calc(100%_-_2rem)] max-w-6xl flex-col sm:w-4/5 lg:w-3/4">
+        <div className="mb-10" data-aos="fade-up">
+          <p className="section-heading my-10 mb-6 w-full border-b-[1px] text-[26px] font-semibold line-sub sm:text-[32px]">
+            <span className="section-title-fill project-title-fill pr-3">
+              My <span className="title-name">Personal Projects</span>
+            </span>
+          </p>
+        </div>
+
+        <div className="space-y-20 sm:space-y-28 lg:space-y-36">
+          {projects.map((project, index) => {
+            const isReversed = index % 2 === 1;
+
+            return (
+              <article
+                key={project.title}
+                className={`flex flex-col items-center gap-8 sm:gap-10 lg:gap-12 ${
+                  isReversed ? "lg:flex-row-reverse" : "lg:flex-row"
+                }`}
+                data-aos={isReversed ? "fade-right" : "fade-left"}
+              >
+                <div className="relative w-full lg:w-3/5">
+                  <a
+                    href={project.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="portfolio-image-link group block focus:outline-none"
+                    aria-label={`View ${project.title} on GitHub`}
+                  >
+                    <div className="relative aspect-[16/9] overflow-hidden">
+                      <Image
+                        src={project.image}
+                        alt={project.imageAlt}
+                        fill
+                        sizes="(max-width: 1024px) calc(100vw - 2rem), 50vw"
+                        className="object-cover object-top transition-transform duration-500 group-hover:scale-[1.025]"
+                      />
+                      <div
+                        className={`absolute inset-0 bg-gradient-to-t from-[#EA9D34] to-transparent opacity-70 transition-opacity duration-300 group-hover:opacity-0 ${
+                          isReversed ? "div-gradient-right" : "div-gradient-left"
+                        }`}
+                        aria-hidden="true"
+                      />
+                    </div>
+                  </a>
                 </div>
-            
-                <div  data-aos="fade-left"  className="flex flex-col md:flex-row gap-10 my-10 pl-2.5">
-        
-                    <div className="relative mt-10 flex-col -z-10">
-                        <a href='https://github.com/LizAntoinette/budget-tracker-frontend' target="_blank" >
-                            <Image src="/images/budget-tracker2.png" className="w-full max-w-[650px] h-auto" alt="Halcyon Theme" width={650} height={650}/>
-                            <div className="absolute inset-0 max-w-[650px] bg-gradient-to-t from-[#EA9D34] hover:opacity-0 to-transparent opacity-70 div-gradient-left fade-down-hover"></div>
-                        </a>
-                    </div>
 
-                    <div className="flex flex-col py-12 text-primary text-right justify-end">
-                        <a href='https://github.com/LizAntoinette/budget-tracker-frontend' target="_blank" >
-                            <h1 className="text-3xl font-bold mb-2">Budget Tracker</h1>
-                        </a>
-                        <p className="text-lg pb-6 company-color">Spring boot + ReactJS</p>
-                        <div className="surface-card max-w-[540px] ml-0 lg:-ml-[112px] px-6 py-5 mb-6 rounded-2xl" >
-                            <p className="text-base leading-7">A budget tracking app with a user-friendly dashboard and graphs.
-                                Users can easily manage their finances with features that let them create, read, update, and delete budget entries.</p>
-                        </div>
-                        
-                        <div className="flex flex-wrap gap-x-4 gap-y-1 justify-end">
-                            <p className="text-primary px-1 text-sm font-medium py-2">Java</p>
-                            <p className="text-primary px-1 text-sm font-medium py-2">ReactJS</p>
-                            <p className="text-primary px-1 text-sm font-medium py-2">Typescript</p>
-                            <p className="text-primary px-1 text-sm font-medium py-2">TailwindCSS</p>
-                            <p className="text-primary px-1 text-sm font-medium py-2">MongoDB</p>
-                        </div>
-                        {/* <div className=" flex m-3 justify-end">
-                            <a href="https://github.com/LizAntoinette" className="text-gray-400 hover:text-gray-300 mx-2">
-                             
-                                <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M10.5 0C4.70138 0 0 4.77499 0 10.6644C0 15.6616 3.388 19.8429 7.9555 21C7.9065 20.856 7.875 20.689 7.875 20.4819V18.6592C7.44888 18.6592 6.73487 18.6592 6.5555 18.6592C5.83712 18.6592 5.19837 18.3454 4.88862 17.7625C4.54475 17.1146 4.48525 16.1237 3.633 15.5176C3.38013 15.3159 3.57262 15.0857 3.864 15.1168C4.40212 15.2714 4.84837 15.6465 5.26837 16.2028C5.68663 16.76 5.8835 16.8862 6.66487 16.8862C7.04375 16.8862 7.61075 16.864 8.1445 16.7787C8.4315 16.0384 8.92762 15.3567 9.534 15.035C6.0375 14.6698 4.36888 12.903 4.36888 10.5044C4.36888 9.47177 4.802 8.47287 5.53788 7.63127C5.29638 6.7959 4.99275 5.09226 5.63063 4.4435C7.20388 4.4435 8.155 5.47973 8.38338 5.75967C9.16738 5.48684 10.0284 5.3322 10.9331 5.3322C11.8396 5.3322 12.7041 5.48684 13.4899 5.76145C13.7156 5.48328 14.6676 4.4435 16.2444 4.4435C16.8849 5.09314 16.5777 6.80389 16.3336 7.63749C17.0651 8.47732 17.4956 9.47355 17.4956 10.5044C17.4956 12.9013 15.8296 14.6671 12.3384 15.0342C13.2991 15.5434 14 16.9742 14 18.0522V20.4819C14 20.5743 13.9799 20.641 13.9694 20.7201C18.0609 19.2635 21 15.3176 21 10.6644C21 4.77499 16.2986 0 10.5 0Z" fill="white"/>
-                                </svg>
-                            </a>
+                <div
+                  className={`relative z-10 flex w-full flex-col text-left text-primary lg:w-2/5 ${
+                    isReversed ? "lg:items-start lg:text-left" : "lg:items-end lg:text-right"
+                  }`}
+                >
+                  <a href={project.href} target="_blank" rel="noopener noreferrer">
+                    <h3 className="mb-2 text-2xl font-bold leading-tight sm:text-3xl">{project.title}</h3>
+                  </a>
+                  <p className="pb-6 text-lg company-color">{project.stack}</p>
 
-                        </div> */}
-                    </div>
-                    
-                
+                  <div
+                    className="portfolio-project-description surface-card mb-5 w-full max-w-[540px] rounded-2xl px-5 py-5 sm:px-6"
+                  >
+                    <p className="text-base leading-7">{project.description}</p>
+                  </div>
+
+                  <div
+                    className={`flex flex-wrap gap-x-4 gap-y-1 ${
+                      isReversed ? "justify-start" : "justify-start lg:justify-end"
+                    }`}
+                  >
+                    {project.tags.map((tag) => (
+                      <span key={tag} className="px-1 py-2 text-sm font-medium text-primary">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
                 </div>
-                <div  data-aos="fade-right"  className="flex flex-col md:flex-row gap-10 my-[6rem] pl-2.5">
-                    <div className="flex flex-col py-12 text-primary justify-start">
-                        <a href='https://github.com/LizAntoinette/Scheduler' target="_blank" >
-                            <h1 className="text-3xl font-bold mb-2">Simple Task Scheduler</h1>
-                        </a>
-                        <p className="text-lg pb-6 company-color">Django + Angular</p>
-                        <div className="surface-card max-w-[540px] mr-0 lg:-mr-[112px] px-6 py-5 mb-6 rounded-2xl z-30" >
-                            <p className="text-base leading-7">A simple task scheduling website. Users can create, read, update, and delete tasks, making it easy to stay organized and manage their time.</p>
-                        </div>
-                        
-                        <div className="flex flex-wrap gap-x-4 gap-y-1 justify-start">
-                            <p className="text-primary px-1 text-sm font-medium py-2">Python</p>
-                            <p className="text-primary px-1 text-sm font-medium py-2">AnguralJS</p>
-                            <p className="text-primary px-1 text-sm font-medium py-2">GraphQL</p>
-                            <p className="text-primary px-1 text-sm font-medium py-2">SASS</p>
-                            <p className="text-primary px-1 text-sm font-medium py-2">TailwindCSS</p>
-                            <p className="text-primary px-1 text-sm font-medium py-2">MongoDB</p>
-                        </div>
-                    </div>
-                    <div className="relative flex-col -z-10">
-                        <a href='https://github.com/LizAntoinette/Scheduler' target="_blank" >
-                            <Image src="/images/task4.png" className="w-full max-w-[650px] h-auto" alt="Halcyon Theme" width={650} height={650} />
-                            <div className="absolute inset-0 max-w-[650px] bg-gradient-to-t from-[#EA9D34] hover:opacity-0 to-transparent opacity-70 div-gradient-right fade-down-hover"></div>
-                        </a>
-                    </div>
-
-                
-                </div> 
-                <div  data-aos="fade-left"  className="flex flex-col md:flex-row gap-10 my-10 pl-2.5">
-    
-                    <div className="relative mt-10 flex-col -z-10">
-                        <a href='https://github.com/LizAntoinette/Translator' target='_blank'>
-                            <Image src="/images/trans.png" className="w-full max-w-[650px] h-auto" alt="Halcyon Theme" width={650} height={650}/>
-                            <div className="absolute inset-0 max-w-[650px] bg-gradient-to-t from-[#EA9D34] to-transparent  opacity-70 div-gradient-left fade-down-hover"></div>
-                        </a>
-                    </div>
-
-                    <div className="flex flex-col py-12 text-primary text-right justify-end mb-10">
-                        <a href='https://github.com/LizAntoinette/Translator' target='_blank'>
-                            <h1 className="text-3xl font-bold mb-2">Translator & Learning tool with AI</h1>
-                        </a>
-                        <p className="text-lg pb-6 company-color">ExpressJS + Vuejs</p>
-                        <div className="surface-card max-w-[540px] ml-0 lg:-ml-[112px] px-6 py-5 mb-6 rounded-2xl" >
-                            <p className="text-base leading-7"> A language learning app that translates text, offers exercises, and allows users to chat with an AI. This makes learning new languages interactive and fun. </p>
-                        </div>
-                        
-                        <div className="flex flex-wrap gap-x-4 gap-y-1 justify-end">
-                            <p className="text-primary px-1 text-sm font-medium py-2">NodeJs</p>
-                            <p className="text-primary px-1 text-sm font-medium py-2">Vuejs</p>
-                            <p className="text-primary px-1 text-sm font-medium py-2">Javacript</p>
-                            <p className="text-primary px-1 text-sm font-medium py-2">Tailwind CSS</p>
-                            <p className="text-primary px-1 text-sm font-medium py-2">Firbase</p>
-                        </div>
-                    </div>
-                
-                </div>
-            </div>
-        </section>
-
-
-    );
-  }
+              </article>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+}

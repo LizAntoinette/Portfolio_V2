@@ -35,11 +35,11 @@ export default function Contact() {
         
         return (
         
-        <section id="contact" className="mt-15 flex-grow mx-auto flex min-h-[53rem] z-20">
-            <div data-aos="fade-up" className="my-[10rem] mx-auto w-[min(33rem,calc(100vw-3rem))] justify-items-center">
+        <section id="contact" className="flex min-h-screen w-full flex-grow items-center py-20 sm:py-24 lg:py-28 z-20">
+            <div data-aos="fade-up" className="mx-auto w-[min(33rem,calc(100vw_-_2rem))] justify-items-center">
                
                     <h2 className="text-3xl font-bold mb-5 text-center text-contact">Get In Touch</h2>
-                    <p  className="text-lg text-center mb-10">Have a question or want to work together?</p>
+                    <p className="text-base text-center mb-10 sm:text-lg">Have a question or want to work together?</p>
 
                     <form onSubmit={handleSubmit} className="flex w-full text-base flex-col justify-items-center">
                 
@@ -54,7 +54,7 @@ export default function Contact() {
                             <textarea id="message" name="message" onChange={handleChange} value={formData.message} rows={10} className="bg-input block w-full p-4 leading-6 rounded-2xl" placeholder="Write your thoughts here..." />
                         </div>
                         {/* Submit Button */}
-                        <button type="submit" className="outline-action send-action border mt-4 font-bold py-2 px-4 w-[15rem] mx-auto rounded-xl">Send Message</button>
+                        <button type="submit" className="outline-action send-action border mt-4 font-bold py-3 px-4 w-full sm:w-[15rem] mx-auto rounded-xl">Send Message</button>
                     </form>
                 
             </div>
