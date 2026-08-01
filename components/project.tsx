@@ -94,7 +94,7 @@ export default function Project() {
                   <p className="pb-6 text-lg company-color">{project.stack}</p>
 
                   <div
-                    className="portfolio-project-description surface-card mb-5 w-full max-w-[540px] rounded-2xl px-5 py-5 sm:px-6"
+                    className="portfolio-project-description mb-5 w-full max-w-[540px]"
                   >
                     <p className="text-base leading-7">{project.description}</p>
                   </div>

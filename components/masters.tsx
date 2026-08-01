@@ -117,9 +117,7 @@ export default function Masters() {
                   <p className="pb-6 text-lg company-color">{project.tags.join(" · ")}</p>
 
                   <div
-                    className={`masters-project-description mb-5 w-full max-w-[540px] ${
-                      isReversed ? "lg:-mr-[112px]" : "lg:-ml-[112px]"
-                    }`}
+                    className="masters-project-description mb-5 w-full max-w-[540px]"
                   >
                     <p className="text-base leading-7">{project.description}</p>
                   </div>

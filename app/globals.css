@@ -332,6 +332,7 @@ html[data-theme="light"] .title-name {
 .theme-transition .section-title-fill,
 .theme-transition .surface-card,
 .theme-transition .masters-project-description,
+.theme-transition .portfolio-project-description,
 .theme-transition .bg-input {
   transition: color 250ms ease, background-color 250ms ease, background-image 250ms ease, border-color 250ms ease, box-shadow 250ms ease;
 }
@@ -409,7 +410,8 @@ html[data-theme="light"] .title-name {
   transform: translateX(3px);
 }
 
-.masters-project-description {
+.masters-project-description,
+.portfolio-project-description {
   color: var(--text-secondary);
 }
 
@@ -540,6 +542,7 @@ html[data-theme="light"] .title-name {
   .theme-transition .section-title-fill,
   .theme-transition .surface-card,
   .theme-transition .masters-project-description,
+  .theme-transition .portfolio-project-description,
   .theme-transition .bg-input {
     transition: none;
   }
@@ -569,16 +572,14 @@ html[data-theme="light"] .title-name {
 }
 
 @media (min-width: 1024px) {
-  .masters-project-description {
+  .masters-project-description,
+  .portfolio-project-description {
+    width: calc(100% + clamp(5rem, 8vw, 9rem));
+    max-width: calc(540px + clamp(5rem, 8vw, 9rem));
     padding: 1.25rem 1.5rem;
     background: var(--surface);
     border-radius: 1rem;
     box-shadow: 0 12px 30px var(--header-shadow);
-  }
-
-  .portfolio-project-description {
-    width: calc(100% + clamp(5rem, 8vw, 9rem));
-    max-width: calc(540px + clamp(5rem, 8vw, 9rem));
   }
 }
 
