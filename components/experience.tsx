@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import AOS from "aos";
+import SectionHeading from "./section_heading";
 
 const employers = [
     { name: "Coach Catalyst", compactName: "Coach Catalyst", panelId: "coach-catalyst" },
@@ -58,11 +59,9 @@ export default function Experience() {
     return (
         <section id="experience" className="mt-12 flex min-h-screen flex-grow items-center py-20 sm:mt-16 sm:py-24 lg:mt-20 lg:py-28 z-20">
             <div className="m-auto flex w-[calc(100%_-_2rem)] max-w-6xl flex-col sm:w-4/5" data-aos="fade-left">
-                <div className='mb-8 sm:mb-12'>
-                    <p className="section-heading text-[28px] sm:text-[32px] mb-6 font-semibold w-full border-b-[1px] line-sub my-10 ">
-                        <span className='section-title-fill pr-4'>
-                            My <span className='title-name'>Experience</span></span></p>
-                </div>
+                <SectionHeading className="mb-12">
+                    My <span className="title-name">Experience</span>
+                </SectionHeading>
                 <div className="m-auto flex w-full flex-col items-start gap-6 lg:flex-row">
                     <div
                         className="experience-mobile-tabs grid w-full lg:hidden"

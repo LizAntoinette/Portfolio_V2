@@ -1,4 +1,5 @@
 import Image from "next/image";
+import SectionHeading from "./section_heading";
 
 const projects = [
   {
@@ -37,13 +38,9 @@ export default function Project() {
   return (
     <section id="project" className="flex flex-grow py-20 sm:py-24 lg:py-28 z-20">
       <div className="mx-auto flex w-[calc(100%_-_2rem)] max-w-6xl flex-col sm:w-4/5 lg:w-3/4">
-        <div className="mb-10" data-aos="fade-up">
-          <p className="section-heading my-10 mb-6 w-full border-b-[1px] text-[26px] font-semibold line-sub sm:text-[32px]">
-            <span className="section-title-fill project-title-fill pr-3">
-              My <span className="title-name">Personal Projects</span>
-            </span>
-          </p>
-        </div>
+        <SectionHeading className="mb-12" data-aos="fade-up">
+          My <span className="title-name">Personal Projects</span>
+        </SectionHeading>
 
         <div className="space-y-20 sm:space-y-28 lg:space-y-36">
           {projects.map((project, index) => {

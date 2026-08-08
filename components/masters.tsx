@@ -1,4 +1,5 @@
 import Image from "next/image";
+import SectionHeading from "./section_heading";
 
 const mastersProjects = [
   {
@@ -34,12 +35,9 @@ export default function Masters() {
   return (
     <section id="masters" className="masters-section flex min-h-screen items-center py-20 sm:py-24 lg:py-28 z-20">
       <div className="mx-auto w-[calc(100%_-_2rem)] max-w-6xl sm:w-4/5 lg:w-3/4">
-        <div className="mb-12 flex flex-col gap-5 sm:flex-row sm:items-center" data-aos="fade-up">
-          <h2 className="text-2xl font-semibold sm:shrink-0 sm:text-[32px]">
-            My <span className="title-name">Master&apos;s Journey</span>
-          </h2>
-          <span className="section-divider h-px w-full" aria-hidden="true" />
-        </div>
+        <SectionHeading className="mb-12" data-aos="fade-up">
+          My <span className="title-name">Master&apos;s Journey</span>
+        </SectionHeading>
 
         <div className="mb-14 py-2 sm:mb-20 sm:py-4" data-aos="fade-up">
           <div className="flex flex-col justify-between gap-7 lg:flex-row lg:items-center">
