@@ -22,6 +22,7 @@ const projects = [
     href: "https://github.com/LizAntoinette/Scheduler",
     tags: ["Python", "Angular", "GraphQL", "Sass", "Tailwind CSS", "MongoDB"],
   },
+  /*
   {
     title: "Translator & Learning Tool with AI",
     stack: "Express.js + Vue.js",
@@ -32,6 +33,7 @@ const projects = [
     href: "https://github.com/LizAntoinette/Translator",
     tags: ["Node.js", "Vue.js", "JavaScript", "Tailwind CSS", "Firebase"],
   },
+  */
 ] as const;
 
 export default function Project() {
