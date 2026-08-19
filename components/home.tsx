@@ -13,7 +13,7 @@ export default function Home() {
                 <p data-aos="fade-up" data-aos-delay="800" className="text-[clamp(2rem,4.3vw,3rem)] leading-tight mt-1 mb-6 text-muted font-bold">Full Stack Developer</p>
                 <p data-aos="fade-up" data-aos-delay="900" className="mb-8 max-w-2xl text-lg text-secondary leading-8">I design, develop, and manage web projects, ensuring functionality, usability, and meeting goals while staying current with new technologies.</p>
                 <div data-aos="fade-up" data-aos-delay="1000" className="flex flex-wrap justify-start mt-10 gap-4 sm:mt-[3.5rem] sm:gap-8">
-                    <a href="/files/Liz_CV.pdf" target="_blank" rel="noopener noreferrer" className="outline-action resume-action inline-flex h-12 w-full items-center justify-center rounded-xl border px-4 font-semibold sm:w-48">Resume</a>
+                    <a href="/files/Anguren_LizAntoinette_CV.pdf" target="_blank" rel="noopener noreferrer" className="outline-action resume-action inline-flex h-12 w-full items-center justify-center rounded-xl border px-4 font-semibold sm:w-48">Resume</a>
                     <a href="#contact" className="outline-action contact-action inline-flex h-12 w-full items-center justify-center rounded-xl border px-4 font-semibold sm:w-48">Contact Me</a>
                 </div>
             </div>

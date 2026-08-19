@@ -7,7 +7,7 @@ const projects = [
     stack: "Spring Boot + React",
     description:
       "A budget tracking app with a user-friendly dashboard and graphs. Users can create, read, update, and delete budget entries to manage their finances more easily.",
-    image: "/images/budget-tracker2.png",
+    image: "/images/budget-tracker.png",
     imageAlt: "Budget Tracker dashboard and financial summary",
     href: "https://github.com/LizAntoinette/budget-tracker-frontend",
     tags: ["Java", "React", "TypeScript", "Tailwind CSS", "MongoDB"],
@@ -17,7 +17,7 @@ const projects = [
     stack: "Django + Angular",
     description:
       "A task scheduling website where users can create, read, update, and delete tasks, making it easier to stay organized and manage their time.",
-    image: "/images/task4.png",
+    image: "/images/task-scheduler.png",
     imageAlt: "Simple Task Scheduler interface",
     href: "https://github.com/LizAntoinette/Scheduler",
     tags: ["Python", "Angular", "GraphQL", "Sass", "Tailwind CSS", "MongoDB"],
