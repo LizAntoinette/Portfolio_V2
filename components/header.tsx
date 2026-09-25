@@ -71,9 +71,10 @@ export default function Header() {
   useEffect(() => {
     const root = document.documentElement;
     const mediaQuery = window.matchMedia("(prefers-color-scheme: light)");
-    const currentTheme: Theme = root.dataset.theme === "light" ? "light" : "dark";
-
-    setTheme(currentTheme);
+    const themeSyncFrame = window.requestAnimationFrame(() => {
+      const currentTheme: Theme = root.dataset.theme === "light" ? "light" : "dark";
+      setTheme(currentTheme);
+    });
 
     const handleSystemThemeChange = (event: MediaQueryListEvent) => {
       if (localStorage.getItem(THEME_STORAGE_KEY)) return;
@@ -85,7 +86,10 @@ export default function Header() {
     };
 
     mediaQuery.addEventListener("change", handleSystemThemeChange);
-    return () => mediaQuery.removeEventListener("change", handleSystemThemeChange);
+    return () => {
+      window.cancelAnimationFrame(themeSyncFrame);
+      mediaQuery.removeEventListener("change", handleSystemThemeChange);
+    };
   }, []);
 
   const toggleTheme = () => {

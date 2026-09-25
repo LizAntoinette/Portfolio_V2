@@ -18,8 +18,10 @@
   --warm-accent: #f6c177;
   --cyan-action: #9ccfd8;
   --cyan-action-border: #56949f;
+  --cyan-action-hover: #9ccfd8;
   --pink-action: #ebbcba;
   --pink-action-border: #b4637a;
+  --pink-action-hover: #ebbcba;
   --action-contrast: #191724;
   --header-bg: rgba(25, 23, 36, 0.78);
   --header-shadow: rgba(12, 12, 13, 0.72);
@@ -42,8 +44,10 @@ html[data-theme="light"] {
   --warm-accent: #965400;
   --cyan-action: #31748f;
   --cyan-action-border: #31748f;
-  --pink-action: #a3395c;
-  --pink-action-border: #a3395c;
+  --cyan-action-hover: #317f99;
+  --pink-action: #b13660;
+  --pink-action-border: #b13660;
+  --pink-action-hover: #c54870;
   --action-contrast: #ffffff;
   --header-bg: rgba(255, 250, 248, 0.82);
   --header-shadow: rgba(68, 56, 75, 0.14);
@@ -516,7 +520,8 @@ html[data-theme="light"] .title-name {
 
 .outline-action {
   background: transparent;
-  transition: color 200ms ease, background-color 200ms ease, border-color 200ms ease;
+  transition: color 200ms ease, background-color 200ms ease, border-color 200ms ease,
+    box-shadow 200ms ease, transform 200ms ease;
 }
 
 .outline-action:focus-visible {
@@ -531,7 +536,7 @@ html[data-theme="light"] .title-name {
 
 .resume-action:hover {
   color: var(--action-contrast);
-  background: var(--cyan-action);
+  background: var(--cyan-action-hover);
 }
 
 .contact-action,
@@ -543,7 +548,40 @@ html[data-theme="light"] .title-name {
 .contact-action:hover,
 .send-action:hover {
   color: var(--action-contrast);
-  background: var(--pink-action);
+  background: var(--pink-action-hover);
+}
+
+html[data-theme="light"] .resume-action,
+html[data-theme="light"] .contact-action,
+html[data-theme="light"] .send-action {
+  color: var(--action-contrast);
+}
+
+html[data-theme="light"] .resume-action {
+  background-color: var(--cyan-action);
+}
+
+html[data-theme="light"] .contact-action,
+html[data-theme="light"] .send-action {
+  background-color: var(--pink-action);
+}
+
+html[data-theme="light"] .resume-action:hover,
+html[data-theme="light"] .resume-action:focus-visible {
+  border-color: var(--cyan-action-hover);
+  background-color: var(--cyan-action-hover);
+  box-shadow: 0 8px 20px rgba(49, 116, 143, 0.24);
+  transform: translateY(-1px);
+}
+
+html[data-theme="light"] .contact-action:hover,
+html[data-theme="light"] .contact-action:focus-visible,
+html[data-theme="light"] .send-action:hover,
+html[data-theme="light"] .send-action:focus-visible {
+  border-color: var(--pink-action-hover);
+  background-color: var(--pink-action-hover);
+  box-shadow: 0 8px 20px rgba(177, 54, 96, 0.24);
+  transform: translateY(-1px);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -573,6 +611,10 @@ html[data-theme="light"] .title-name {
   }
 
   .experience-mobile-tab {
+    transition: none;
+  }
+
+  .outline-action {
     transition: none;
   }
 }
